@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Details | Balasubrahmanya</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    }
+    section {
+      transition: transform 0.3s ease-in-out;
+    }
+    section:hover {
+      transform: translateY(-4px);
+    }
+    ul li::before {
+      content: '✦';
+      color: #3b82f6;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md py-4 px-6 flex flex-wrap justify-center gap-4 text-blue-600 font-semibold sticky top-0 z-10">
+    <a href="index.html">Home</a>
+    <a href="education.html">Education</a>
+    <a href="internships.html">Internships</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="hackathons.html">Hackathons</a>
+    <a href="personal.html" class="text-blue-900 underline">Personal</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <header class="text-center mb-10" data-aos="fade-down">
+      <h1 class="text-4xl font-extrabold text-blue-700">Personal Details</h1>
+      <p class="text-gray-600 mt-2 text-lg">Basic information and background</p>
+    </header>
+
+    <!-- Personal Information -->
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8" data-aos="fade-up">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">👤 Personal Information</h2>
+      <ul class="text-gray-700 space-y-2">
+        <li><strong>DOB:</strong> 23 Dec 2003</li>
+        <li><strong>Gender:</strong> Male</li>
+        <li><strong>Nationality:</strong> Indian</li>
+        <li><strong>Languages:</strong> English, Kannada, Hindi, Konkani</li>
+        <li><strong>Location:</strong> Nehru Nagar, Puttur, Karnataka</li>
+      </ul>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8" data-aos="fade-up">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">📞 Contact Information</h2>
+      <ul class="text-gray-700 space-y-2">
+        <li><i data-feather="mail" class="text-blue-600 mr-2"></i><strong>Email:</strong> 
+          <a href="mailto:balasubrahmanya3002@gmail.com" class="text-blue-600 hover:underline">balasubrahmanya3002@gmail.com</a></li>
+        <li><i data-feather="phone" class="text-blue-600 mr-2"></i><strong>Phone:</strong> 
+          <a href="tel:+917019079848" class="text-blue-600 hover:underline">+91-7019079848</a></li>
+        <li><i data-feather="linkedin" class="text-blue-600 mr-2"></i><strong>LinkedIn:</strong> 
+          <a href="https://www.linkedin.com/in/bala-subrahmanya-413221257" class="text-blue-600 hover:underline">linkedin.com/in/balasubrahmanya</a></li>
+        <li><i data-feather="github" class="text-blue-600 mr-2"></i><strong>GitHub:</strong> 
+          <a href="https://github.com/bsubba3002" class="text-blue-600 hover:underline">github.com/bsubba3002</a></li>
+      </ul>
+    </section>
+
+    <!-- Hobbies -->
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8" data-aos="fade-up">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">🎯 Hobbies & Interests</h2>
+      <ul class="text-gray-700 space-y-2">
+        <li>Travelling and exploring new places</li>
+        <li>Photography and video editing</li>
+        <li>Reading books on technology and personal development</li>
+        <li>Gaming and Virtual Reality</li>
+        <li>Volunteer work and community service</li>
+      </ul>
+    </section>
+
+    <!-- Social Media -->
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8" data-aos="fade-up">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">🌐 Social Media</h2>
+      <ul class="text-gray-700 space-y-2">
+        <li><strong>Twitter:</strong> <a href="https://twitter.com/yourusername" class="text-blue-600 hover:underline">twitter.com/yourusername</a></li>
+        <li><strong>Facebook:</strong> <a href="https://facebook.com/yourusername" class="text-blue-600 hover:underline">facebook.com/yourusername</a></li>
+        <li><strong>Instagram:</strong> <a href="https://instagram.com/yourusername" class="text-blue-600 hover:underline">instagram.com/yourusername</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-16 text-center text-gray-600 text-sm">
+    <div class="w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-4 rounded-full animate-pulse"></div>
+
+    <p class="mb-2">
+      Designed with <span class="inline-block animate-bounce text-red-500 mx-1">❤️</span> 
+      by <span class="font-semibold text-blue-600 hover:underline hover:text-blue-800 transition">Balasubrahmanya</span>
+    </p>
+
+    <p class="text-xs text-gray-400">
+      © <span id="year"></span> All rights reserved.
+    </p>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>feather.replace();</script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+
+</body>
+</html>

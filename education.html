@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education | Balasubrahmanya</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    }
+    section {
+      transition: transform 0.3s ease-in-out;
+    }
+    section:hover {
+      transform: translateY(-4px);
+    }
+    ul li::before {
+      content: '✦';
+      color: #3b82f6;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .specialization {
+      margin-top: 1rem;
+      font-style: italic;
+      color: #2c3e50;
+    }
+    .college-logo {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
+  </style>
+
+  <script>
+    // Initialize AOS (Animate On Scroll)
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init(); // Initializes AOS for animations
+    });
+  </script>
+</head>
+<body class="text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md py-4 px-6 flex justify-center gap-6 text-blue-600 font-semibold sticky top-0 z-10">
+    <a href="index.html">Home</a>
+    <a href="education.html" class="text-blue-900 underline">Education</a>
+    <a href="internships.html">Internships</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="hackathons.html">Hackathons</a>
+    <a href="personal.html">Personal</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold text-blue-700">Education</h1>
+      <p class="text-gray-600 mt-2 text-lg">Academic Background</p>
+    </header>
+
+    <!-- Qualifications Section -->
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8" data-aos="fade-up">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">Qualifications</h2>
+      <ul class="text-gray-700 space-y-8 text-lg">
+        <li class="flex items-start gap-4">
+          <img src="images/VCET.png" alt="Vivekananda College Logo" class="college-logo mt-1" />
+          <div>
+            <a href="https://vcetputtur.ac.in/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
+              BE in AI & ML – Vivekananda College of Engineering and Technology, Puttur (2026)
+            </a>
+            <div class="specialization">
+              <p class="font-semibold mt-2">Subjects</p>
+              <ul class="list-disc list-inside">
+                <li>Python</li>
+                <li>C</li>
+                <li>Julia</li>
+                <li>Natural Language Processing (NLP)</li>
+                <li>Machine Learning</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="flex items-start gap-4">
+          <img src="images/srpuc.jpeg" alt="Shri Ram PU College Logo" class="college-logo" />
+          <div>
+            <a href="http://srvk.org/institutions/sri-rama-p-u-college/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
+              Pre-University – Shri Ram PU College, Kalladka (2022)
+            </a>
+            <div class="specialization">
+              <p class="font-semibold mt-2">Subjects</p>
+              <ul class="list-disc list-inside">
+                <li>Mathematics</li>
+                <li>Physics</li>
+                <li>Computer Science</li>
+                <li>SChemistry</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="flex items-start gap-4">
+          <img src="images/sudana.jpeg" alt="Sudana Residential School Logo" class="college-logo" />
+          <div>
+            <a href="https://www.sudanaschool.apsys-solutions.in/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
+              SSLC – Sudana Residential School, Puttur (2020)
+            </a>
+            <div class="specialization">
+              <p class="font-semibold mt-2">Subjects</p>
+              <ul class="list-disc list-inside">
+                <li>General Studies</li>
+                <li>English</li>
+                <li>Science</li>
+                <li>Social Studies</li>
+                <li>Sanskrith</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="flex items-start gap-4">
+          <img src="images/VEMS.jpeg" alt="Vivekananda English Medium School Logo" class="college-logo" />
+          <div>
+            <a href="https://vemsputtur.com/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
+              High School – Vivekananda English Medium School, Puttur
+            </a>
+            <div class="specialization">
+              <p class="font-semibold mt-2">Subjects:</p>
+              <ul class="list-disc list-inside">
+                <li>Science</li>
+                <li>Mathematics</li>
+                <li>Kannada</li>
+                <li>Social Studies</li>
+                <li>English</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-12 text-sm text-gray-500">
+    <p>Designed with ❤️ by Balasubrahmanya</p>
+  </footer>
+
+  <script>
+    // Initialize AOS (Animate On Scroll) after content is loaded
+    AOS.init();
+  </script>
+
+</body>
+</html>

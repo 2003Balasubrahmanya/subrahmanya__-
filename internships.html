@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internships | Balasubrahmanya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    }
+    section {
+      transition: transform 0.3s ease-in-out;
+    }
+    section:hover {
+      transform: translateY(-4px);
+    }
+    ul li::before {
+      content: '✦';
+      color: #3b82f6;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .internship-description {
+      margin-top: 1rem;
+      color: #4b5563;
+      font-size: 1.1rem;
+    }
+    .download-button {
+      background-color: #3b82f6;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.375rem;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .download-button:hover {
+      background-color: #2563eb;
+    }
+    .company-logo {
+      width: 60px;
+      height: auto;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md py-4 px-6 flex justify-center gap-6 text-blue-600 font-semibold sticky top-0 z-10">
+    <a href="index.html">Home</a>
+    <a href="education.html">Education</a>
+    <a href="internships.html" class="text-blue-900 underline">Internships</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="hackathons.html">Hackathons</a>
+    <a href="personal.html">Personal</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold text-blue-700">Internships</h1>
+      <p class="text-gray-600 mt-2 text-lg">Professional Experiences</p>
+    </header>
+
+    <!-- Internship 1: Project Management Intern -->
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+      <div class="flex items-center mb-4">
+        <img src="images/blue planet info tech solutions.png" alt="Blue Planet Infosolutions Logo" class="company-logo" />
+        <h2 class="text-2xl font-bold text-blue-600">Project Management Intern – Blue Planet Infosolutions Pvt. Ltd (Dec 2024 – Present)</h2>
+      </div>
+      <div class="internship-description">
+        <p>As a Project Management Intern, I assist in planning, organizing, and executing projects from inception to completion. My responsibilities include coordinating between teams, managing timelines, preparing project documentation, and ensuring effective communication with stakeholders. This internship has allowed me to strengthen my project management skills, working in an Agile environment.</p>
+        <p>Key Contributions:</p>
+        <ul class="list-disc pl-5 mt-2">
+          <li>Assisted in project planning and scheduling</li>
+          <li>Worked closely with cross-functional teams to ensure timely project delivery</li>
+          <li>Maintained project documentation and prepared progress reports</li>
+        </ul>
+      </div>
+      <a href="https://drive.google.com/your_google_drive_link_here" target="_blank" class="download-button">Download Project Management Internship Documents</a>
+    </section>
+
+    <!-- Internship 2: Python Developer Intern -->
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+      <div class="flex items-center mb-4">
+        <img src="images/NativeSoftTech_internship.png" alt="Native Soft Tech Logo" class="company-logo" />
+        <h2 class="text-2xl font-bold text-blue-600">Python Developer Intern – Native Soft Tech (Dec 2023 – Feb 2024)</h2>
+      </div>
+      <div class="internship-description">
+        <p>During my time as a Python Developer Intern, I worked on developing applications and automating processes using Python. My tasks involved writing clean, efficient code, debugging, testing applications, and collaborating with senior developers. I contributed to building scalable applications that helped improve operational efficiency for clients.</p>
+        <p>Key Contributions:</p>
+        <ul class="list-disc pl-5 mt-2">
+          <li>Developed Python scripts to automate data processing</li>
+          <li>Collaborated on building a web-based application using Flask</li>
+          <li>Optimized SQL queries and worked with databases to manage large datasets</li>
+          <li>Provided support in debugging and troubleshooting code issues</li>
+        </ul>
+      </div>
+      <a href="https://drive.google.com/file/d/1a8CnkronYf2NDD9Nd2aDBPu1lcFYBfmQ/view?usp=drive_link" target="_blank" class="download-button">Python Developer Internship Certificate</a>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-12 text-sm text-gray-500">
+    <p>Designed with ❤️ by Balasubrahmanya</p>
+  </footer>
+
+</body>
+</html>
