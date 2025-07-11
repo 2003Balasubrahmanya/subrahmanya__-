@@ -9,9 +9,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -29,14 +26,25 @@
         <div class="text-blue-600 font-extrabold text-xl">
           <a href="index.html">Balasubrahmanya</a>
         </div>
+
+        <!-- Hamburger Icon -->
         <div class="md:hidden">
           <button id="menu-toggle" class="text-blue-600 focus:outline-none">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+            <!-- Hamburger (☰) -->
+            <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" stroke="currentColor" stroke-width="2"
                  viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
+
+            <!-- Close (✖) -->
+            <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </button>
         </div>
+
+        <!-- Desktop Links -->
         <div class="hidden md:flex space-x-6 text-blue-600 font-semibold">
           <a href="index.html">Home</a>
           <a href="education.html">Education</a>
@@ -49,7 +57,7 @@
         </div>
       </div>
 
-      <!-- Mobile menu -->
+      <!-- Mobile Links -->
       <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 mt-2 pb-4 text-blue-600 font-semibold">
         <a href="index.html">Home</a>
         <a href="education.html">Education</a>
@@ -62,7 +70,26 @@
       </div>
     </div>
   </nav>
-  <!-- Main Content -->
+
+  <!-- 🔽 Optional Main Content Placeholder -->
+  <main class="max-w-4xl mx-auto px-4 py-10 text-center">
+    <h1 class="text-4xl font-bold text-blue-700">Welcome to My Portfolio</h1>
+    <p class="mt-4 text-gray-600">Explore my projects, skills, certifications, and more.</p>
+  </main>
+
+  <!-- ✅ JavaScript for Hamburger Toggle -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
   <div class="max-w-4xl mx-auto px-6 py-10 text-center">
     
     <!-- Profile Image -->
