@@ -3,67 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Internships | Balasubrahmanya</title>
+  <title>Balasubrahmanya | Portfolio</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Inter', sans-serif;
       background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     }
-    section {
-      transition: transform 0.3s ease-in-out;
-    }
-    section:hover {
-      transform: translateY(-4px);
-    }
-    ul li::before {
-      content: '✦';
-      color: #3b82f6;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-    .internship-description {
-      margin-top: 1rem;
-      color: #4b5563;
-      font-size: 1.1rem;
-    }
-    .download-button {
-      background-color: #3b82f6;
-      color: white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 0.375rem;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 1rem;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-    .download-button:hover {
-      background-color: #2563eb;
-    }
-    .company-logo {
-      width: 60px;
-      height: auto;
-      margin-right: 10px;
-    }
   </style>
 </head>
+
 <body class="text-gray-800">
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow-md py-4 px-6 flex justify-center gap-6 text-blue-600 font-semibold sticky top-0 z-10">
-    <a href="index.html">Home</a>
-    <a href="education.html">Education</a>
-    <a href="internships.html" class="text-blue-900 underline">Internships</a>
-    <a href="skills.html">Skills</a>
-    <a href="projects.html">Projects</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="hackathons.html">Hackathons</a>
-    <a href="personal.html">Personal</a>
+  <!-- ✅ Responsive Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-blue-600 font-extrabold text-xl">
+          <a href="index.html">Balasubrahmanya</a>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+            <!-- Hamburger (☰) -->
+            <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+
+            <!-- Close (✖) -->
+            <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex space-x-6 text-blue-600 font-semibold">
+          <a href="index.html">Home</a>
+          <a href="education.html">Education</a>
+          <a href="internships.html">Internships</a>
+          <a href="skills.html">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="hackathons.html">Hackathons</a>
+          <a href="personal.html">Personal</a>
+        </div>
+      </div>
+
+      <!-- Mobile Links -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 mt-2 pb-4 text-blue-600 font-semibold">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="internships.html">Internships</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="hackathons.html">Hackathons</a>
+        <a href="personal.html">Personal</a>
+      </div>
+    </div>
   </nav>
+
+  <!-- 🔽 Optional Main Content Placeholder -->
+  <main class="max-w-4xl mx-auto px-4 py-10 text-center">
+    <h1 class="text-4xl font-bold text-blue-700">Welcome to My Portfolio</h1>
+    <p class="mt-4 text-gray-600">Explore my projects, skills, certifications, and more.</p>
+  </main>
+
+  <!-- ✅ JavaScript for Hamburger Toggle -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- Main Content -->
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
