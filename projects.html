@@ -1,297 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balasubrahmanya | Portfolio</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>Project Showcase</title>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .domain-btn {
+      padding: 12px 20px;
+      border: none;
+      background: linear-gradient(90deg, #06b6d4, #3b82f6);
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    .domain-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    }
+    .project-list {
+      display: none;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .project-link {
+      cursor: pointer;
+      color: #38bdf8;
+      display: block;
+      margin: 6px 0;
+      font-weight: bold;
+    }
+    .project-detail {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #1e293b;
+      border-radius: 10px;
+    }
+    .project-detail h3 {
+      color: #7dd3fc;
+    }
+    .screenshot {
+      margin-top: 10px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 2px solid #38bdf8;
     }
   </style>
 </head>
+<body>
 
-<body class="text-gray-800">
+<h2>Explore Projects by Domain</h2>
 
-  <!-- ✅ Responsive Navbar -->
-  <nav class="bg-white shadow-md sticky top-0 z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="text-blue-600 font-extrabold text-xl">
-          <a href="index.html">Balasubrahmanya</a>
-        </div>
+<div class="btn-group">
+  <button class="domain-btn" onclick="showProjects('web')">Web</button>
+  <button class="domain-btn" onclick="showProjects('ml')">ML</button>
+  <button class="domain-btn" onclick="showProjects('dl')">DL</button>
+  <button class="domain-btn" onclick="showProjects('genai')">GenAI</button>
+  <button class="domain-btn" onclick="showProjects('nlp')">NLP</button>
+</div>
 
-        <!-- Hamburger Icon -->
-        <div class="md:hidden">
-          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
-            <!-- Hamburger (☰) -->
-            <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" stroke="currentColor" stroke-width="2"
-                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+<div id="web" style="text-align:center; padding: 30px; background: linear-gradient(to right, #0f172a, #1e293b); border-radius: 16px; margin-bottom: 40px; box-shadow: 0 12px 24px rgba(0,0,0,0.5);">
+  <h2 style="color: #38bdf8; font-size: 30px; font-weight: 700; margin-bottom: 24px;">🔹 Web Development Projects (21)</h2>
 
-            <!-- Close (✖) -->
-            <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
-                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Desktop Links -->
-        <div class="hidden md:flex space-x-6 text-blue-600 font-semibold">
-          <a href="index.html">Home</a>
-          <a href="education.html">Education</a>
-          <a href="internships.html">Internships</a>
-          <a href="skills.html">Skills</a>
-          <a href="projects.html">Projects</a>
-          <a href="certifications.html">Certifications</a>
-          <a href="hackathons.html">Hackathons</a>
-          <a href="personal.html">Personal</a>
-        </div>
-      </div>
-
-      <!-- Mobile Links -->
-      <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 mt-2 pb-4 text-blue-600 font-semibold">
-        <a href="index.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="internships.html">Internships</a>
-        <a href="skills.html">Skills</a>
-        <a href="projects.html">Projects</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="hackathons.html">Hackathons</a>
-        <a href="personal.html">Personal</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- 🔽 Optional Main Content Placeholder -->
-  <main class="max-w-4xl mx-auto px-4 py-10 text-center">
-    <h1 class="text-4xl font-bold text-blue-700">Welcome to My Portfolio</h1>
-    <p class="mt-4 text-gray-600">Explore my projects, skills, certifications, and more.</p>
-  </main>
-
-  <!-- ✅ JavaScript for Hamburger Toggle -->
-  <script>
-    const toggleBtn = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const closeIcon = document.getElementById('close-icon');
-
-    toggleBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      hamburgerIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-    });
-  </script>
-<section id="project-nav" class="py-10 px-6 bg-white text-center scroll-mt-20">
-  <h2 class="text-2xl font-bold text-blue-700 mb-6">Explore My Projects</h2>
-  <div class="flex flex-wrap justify-center gap-4">
-
-    <section id="skillsync" class="py-10 px-4 bg-gray-900 text-white">
-
-
-    <a href="#sugandha" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">Sugandha Bhavan</a>
-
-    <a href="#malnad" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Malnad Travels</a>
-
-    <a href="#omai" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">Om.ai</a>
-
-    <a href="#ayodhya" class="px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition">Ayodhya VR</a>
-
-    <a href="mlnotebooks" class="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition">ML Notebooks</a>
-
-    <a href="#nlpnotebooks" class="px-4 py-2 bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition">NLP Notebooks</a>
-
-    <a href="#native" class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition">Internship Projects</a>
-
-    <a href="#medisync" class="px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition">Medi_Sync</a>
-
-    <a href="#bhojanalay" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Bhojanalay</a>
-
-    <a href="#snake" class="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition">Snake Game</a>
-
-    <a href="#xoxo" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">XOXO Galaxy</a>
-
-    <a href="#ns" class="px-4 py-2 bg-lime-600 text-white rounded-lg hover:bg-lime-700 transition">NS Enterprises</a>
-
-    <a href="#yt" class="px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition">YouTube Download</a>
-
+  <!-- Project Buttons -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+    <span class="project-link" onclick="scrollToProject('subrahmanya__')">subrahmanya__</span>
+    <span class="project-link" onclick="scrollToProject('chatty_coffee')">chatty_coffee</span>
+    <span class="project-link" onclick="scrollToProject('lenscraft-studio')">lenscraft-studio</span>
+    <span class="project-link" onclick="scrollToProject('career_compass')">career_compass</span>
+    <span class="project-link" onclick="scrollToProject('malnad-travels-website')">malnad-travels-website</span>
+    <span class="project-link" onclick="scrollToProject('Sugandha-Bhavan')">Sugandha-Bhavan</span>
+    <span class="project-link" onclick="scrollToProject('balasubrahmanya-')">balasubrahmanya-</span>
+    <span class="project-link" onclick="scrollToProject('NS-ENTERPRISES')">NS-ENTERPRISES</span>
+    <span class="project-link" onclick="scrollToProject('YouTube_download-')">YouTube_download-</span>
+    <span class="project-link" onclick="scrollToProject('XOXO-Galaxy')">XOXO-Galaxy</span>
+    <span class="project-link" onclick="scrollToProject('Snake_Game')">Snake_Game</span>
+    <span class="project-link" onclick="scrollToProject('Bhojanalay')">Bhojanalay</span>
+    <span class="project-link" onclick="scrollToProject('Medi_Sync')">Medi_Sync</span>
+    <span class="project-link" onclick="scrollToProject('SKILL-SYNC')">SKILL-SYNC</span>
+    <span class="project-link" onclick="scrollToProject('Tapovana')">Tapovana</span>
+    <span class="project-link" onclick="scrollToProject('simple-calculator-')">simple-calculator-</span>
+    <span class="project-link" onclick="scrollToProject('om.ai')">om.ai</span>
+    <span class="project-link" onclick="scrollToProject('Project_web')">Project_web</span>
+    <span class="project-link" onclick="scrollToProject('clg_website_')">clg_website_</span>
+    <span class="project-link" onclick="scrollToProject('clg_website')">clg_website</span>
+    <span class="project-link" onclick="scrollToProject('subrahmanya')">subrahmanya</span>
   </div>
+</div>
 
-
-
-  <!-- Main Content -->
-<!-- Project Navigation Section -->
-<!-- ✅ SkillSync Project Section -->
-<section id="skillsync" class="py-10 px-4 bg-gray-900 text-white">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold text-cyan-400 mb-8">💼 SkillSync – AI Career Match Platform</h2>
-    
-    <div class="bg-gray-800 rounded-2xl p-6 md:flex items-center gap-6 shadow-lg">
-      <!-- Image -->
-      <img src="images/skill_sync.jpg" alt="SkillSync Logo" class="w-full md:w-60 rounded-xl mb-4 md:mb-0">
-
-      <!-- Content -->
-      <div class="flex-1">
-        <p class="text-gray-300 text-lg mb-3">
-          SkillSync is an AI-powered web platform that analyzes your skillset and recommends suitable job roles. 
-          It performs skill gap analysis, job title prediction, and even resume optimization. 
-          Designed to accelerate your career journey with smart NLP techniques.
-        </p>
-
-        <!-- Tech Stack -->
-        <div class="mb-4">
-          <h3 class="text-cyan-300 font-semibold">⚙️ Tech Stack:</h3>
-          <ul class="list-disc list-inside text-gray-400">
-            <li>Python, Flask, HTML, CSS, Bootstrap</li>
-            <li>Streamlit, Pandas, Scikit-learn, Cosine Similarity</li>
-            <li>GitHub, Streamlit Cloud</li>
-          </ul>
-        </div>
-
-        <!-- Links -->
-        <div class="flex flex-wrap items-center gap-4 mt-2">
-          <a href="https://github.com/bsubba3002/SKILL-SYNC" target="_blank" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-xl transition-all duration-200">
-            🔗 GitHub Repo
-          </a>
-          <a href="https://skill-sync-w3uc.onrender.com/" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-xl transition-all duration-200">
-            🚀 Live App
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Project Content Sections (same page) -->
-<!-- ====== START: SkillSync Project Card ====== -->
-<section id="skillsync-project" class="py-10 px-4 bg-gray-900 text-white">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold text-cyan-400 mb-8">💼 SkillSync – AI Career Match Platform</h2>
-    
-    <div class="bg-gray-800 rounded-2xl p-6 md:flex items-center gap-6 shadow-lg">
-      <!-- Image -->
-      <img src="images/skill_sync.jpg" alt="SkillSync Logo" class="w-full md:w-60 rounded-xl mb-4 md:mb-0">
-
-      <!-- Content -->
-      <div class="flex-1">
-        <p class="text-gray-300 text-lg mb-3">
-          SkillSync is an AI-powered web platform that analyzes your skillset and recommends suitable job roles. 
-          It performs skill gap analysis, job title prediction, and even resume optimization. 
-          Designed to accelerate your career journey with smart NLP techniques.
-        </p>
-
-        <!-- Tech Stack -->
-        <div class="mb-4">
-          <h3 class="text-cyan-300 font-semibold">⚙️ Tech Stack:</h3>
-          <ul class="list-disc list-inside text-gray-400">
-            <li>Python, Flask, HTML, CSS, Bootstrap</li>
-            <li>Streamlit, Pandas, Scikit-learn, Cosine Similarity</li>
-            <li>GitHub, Streamlit Cloud</li>
-          </ul>
-        </div>
-
-        <!-- Links -->
-        <div class="flex flex-wrap items-center gap-4 mt-2">
-          <a href="https://github.com/bsubba3002/SKILL-SYNC" target="_blank" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-xl transition-all duration-200">
-            🔗 GitHub Repo
-          </a>
-          <a href="https://skill-sync-w3uc.onrender.com/" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-xl transition-all duration-200">
-            🚀 Live App
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ====== END: SkillSync Project Card ====== -->
-
-
-<section id="sugandha" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-green-700 mb-4">Sugandha Bhavan</h3>
-  <p>Restaurant landing page with food listing and menu ordering system.</p>
-</section>
-
-<section id="malnad" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-indigo-700 mb-4">Malnad Travels</h3>
-  <p>Travel agency web app with booking system and responsive UI.</p>
-</section>
-
-<section id="omai" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-purple-700 mb-4">Om.ai</h3>
-  <p>Personal AI chatbot with resume query capabilities.</p>
-</section>
-
-<section id="ayodhya" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-pink-700 mb-4">Ayodhya VR</h3>
-  <p>Immersive virtual reality experience of Ram Mandir and Ayodhya ghat with 360° view.</p>
-</section>
-
-<section id="mlnotebooks" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-yellow-700 mb-4">ML Notebooks</h3>
-  <p>Jupyter notebooks showcasing supervised, unsupervised and deep learning experiments.</p>
-</section>
-
-<section id="nlpnotebooks" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-rose-700 mb-4">NLP Projects</h3>
-  <p>Natural Language Processing experiments including sentiment analysis and chatbots.</p>
-</section>
-
-<section id="native" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-orange-700 mb-4">Internship Projects</h3>
-  <p>Python + MySQL tools, CMS dashboard with Google Maps and Bootstrap.</p>
-</section>
-
-<section id="medisync" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-cyan-700 mb-4">Medi_Sync</h3>
-  <p>AI-Powered medicine reminder and patient health management app.</p>
-</section>
-
-<section id="bhojanalay" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-red-700 mb-4">Bhojanalay</h3>
-  <p>Restaurant and hostel mess food ordering and slot booking system.</p>
-</section>
-
-<section id="snake" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-slate-700 mb-4">Snake Game</h3>
-  <p>Retro-style snake game built in Python using Pygame.</p>
-</section>
-
-<section id="xoxo" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-teal-700 mb-4">XOXO Galaxy</h3>
-  <p>3D Tic Tac Toe with space theme, animated in Unity.</p>
-</section>
-
-<section id="ns" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-lime-700 mb-4">NS Enterprises</h3>
-  <p>Business portfolio site with client testimonials, contact form, and admin dashboard.</p>
-</section>
-
-<section id="yt" class="py-12 px-6 bg-gray-50 scroll-mt-24">
-  <h3 class="text-xl font-bold text-amber-700 mb-4">YouTube Download Tool</h3>
-  <p>Python-based GUI for downloading videos and audio from YouTube using pytube.</p>
-</section>
-
-<!-- Optional: Smooth Scroll Behavior -->
+<!-- Inline CSS -->
 <style>
-  html {
-    scroll-behavior: smooth;
+  .project-link {
+    background-color: #1e40af;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .project-link:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px) scale(1.05);
   }
 </style>
 
 
-  <!-- Footer -->
-  <footer class="text-center mt-12 text-sm text-gray-500">
-    <p>Designed with ❤️ by Balasubrahmanya</p>
-  </footer>
+
+<!-- Project Descriptions -->
+
+<div class="project-detail" id="subrahmanya__">
+  <h3>SkillSync</h3>
+  <p><strong>Description:</strong> An AI-powered career assistant that recommends job titles based on your skills and suggests resume improvements.</p>
+  <p><strong>Tech Stack:</strong> Flask, Python, Scikit-learn, HTML, CSS</p>
+  <p><strong>Benefits:</strong> Personalized job targeting, smart resume upgrades, higher hiring chances.</p>
+  <p><a href="https://github.com/bsubba3002/SkillSync" target="_blank">GitHub Repo</a> | <a href="#">Live Demo</a></p>
+  <img src="https://via.placeholder.com/400x250?text=SkillSync+Screenshot" class="screenshot" alt="SkillSync Screenshot">
+</div>
+
+
+<div class="project-detail" id="smartinvoice">
+  <h3>SmartInvoice</h3>
+  <p><strong>Description:</strong> A professional invoicing web app to generate, download, and manage client billing details.</p>
+  <p><strong>Tech Stack:</strong> Flask, Jinja2, SQLite, Bootstrap</p>
+  <p><strong>Benefits:</strong> Smooth client handling, easy PDF export, clean record keeping.</p>
+  <p><a href="https://github.com/bsubba3002/SmartInvoice" target="_blank">GitHub Repo</a> | <a href="#">Live Demo</a></p>
+  <img src="https://via.placeholder.com/400x250?text=SmartInvoice+Screenshot" class="screenshot" alt="SmartInvoice Screenshot">
+</div>
+
+<div class="project-detail" id="om.ai">
+  <h3>Medi_Sync</h3>
+  <p><strong>Description:</strong> A patient record and medicine reminder platform that integrates Google Calendar APIs.</p>
+  <p><strong>Tech Stack:</strong> Flask, OAuth2, Google Calendar API, SQLite</p>
+  <p><strong>Benefits:</strong> Timely reminders, easy health record syncing, and better medication compliance.</p>
+  <p><a href="https://github.com/bsubba3002/Medi_Sync" target="_blank">GitHub Repo</a> | <a href="#">Live Demo</a></p>
+  <img src="https://via.placeholder.com/400x250?text=Medi_Sync+Screenshot" class="screenshot" alt="Medi_Sync Screenshot">
+</div>
+
+<!-- Add more project-detail blocks here for ML, DL, etc. -->
+
+<script>
+  function showProjects(domainId) {
+    document.querySelectorAll('.project-list').forEach(div => div.style.display = 'none');
+    document.getElementById(domainId).style.display = 'block';
+  }
+
+  function scrollToProject(projectId) {
+    document.getElementById(projectId).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
