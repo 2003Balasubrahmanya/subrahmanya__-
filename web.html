@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Projects | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- HEADER -->
+  <header class="bg-gray-900 text-white shadow">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Balasubrahmanya</h1>
+      <nav class="space-x-4 text-sm">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="web.html" class="hover:underline font-semibold">Web Dev</a>
+        <a href="ml.html" class="hover:underline">ML</a>
+        <a href="dl.html" class="hover:underline">DL</a>
+        <a href="genai.html" class="hover:underline">GenAI</a>
+        <a href="nlp.html" class="hover:underline">NLP</a>
+        <a href="misc.html" class="hover:underline">Misc</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+    <h2 class="text-3xl font-bold text-blue-700 mb-8">🌐 Web Development Projects</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      
+      <!-- Project Cards Start -->
+      <!-- subrahmanya__ -->
+      <div class="bg-white border rounded-lg p-4 shadow hover:shadow-lg transition">
+        <button class="w-full text-left font-semibold text-blue-600 flex justify-between items-center" onclick="toggleDetails(this)">
+          subrahmanya__
+          <span class="text-lg">+</span>
+        </button>
+        <div class="details hidden mt-2 text-sm text-gray-600">
+          Personal portfolio webpage.<br>
+          <a href="https://github.com/bsubba3002/subrahmanya__" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">🔗 GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- chatty_coffee -->
+      <div class="bg-white border rounded-lg p-4 shadow hover:shadow-lg transition">
+        <button class="w-full text-left font-semibold text-blue-600 flex justify-between items-center" onclick="toggleDetails(this)">
+          chatty_coffee
+          <span class="text-lg">+</span>
+        </button>
+        <div class="details hidden mt-2 text-sm text-gray-600">
+          Coffee-themed HTML website.<br>
+          <a href="https://github.com/bsubba3002/chatty_coffee" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">🔗 GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- lenscraft-studio -->
+      <div class="bg-white border rounded-lg p-4 shadow hover:shadow-lg transition">
+        <button class="w-full text-left font-semibold text-blue-600 flex justify-between items-center" onclick="toggleDetails(this)">
+          lenscraft-studio
+          <span class="text-lg">+</span>
+        </button>
+        <div class="details hidden mt-2 text-sm text-gray-600">
+          Photography/Studio portfolio website.<br>
+          <a href="https://github.com/bsubba3002/lenscraft-studio" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">🔗 GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- career_compass -->
+      <div class="bg-white border rounded-lg p-4 shadow hover:shadow-lg transition">
+        <button class="w-full text-left font-semibold text-blue-600 flex justify-between items-center" onclick="toggleDetails(this)">
+          career_compass
+          <span class="text-lg">+</span>
+        </button>
+        <div class="details hidden mt-2 text-sm text-gray-600">
+          Career guidance tool with a web interface.<br>
+          <a href="https://github.com/bsubba3002/career_compass" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">🔗 GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- malnad-travels-website -->
+      <div class="bg-white border rounded-lg p-4 shadow hover:shadow-lg transition">
+        <button class="w-full text-left font-semibold text-blue-600 flex justify-between items-center" onclick="toggleDetails(this)">
+          malnad-travels-website
+          <span class="text-lg">+</span>
+        </button>
+        <div class="details hidden mt-2 text-sm text-gray-600">
+          Travel agency web project.<br>
+          <a href="https://github.com/bsubba3002/malnad-travels-website" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">🔗 GitHub Repo</a>
+        </div>
+      </div>
+      <!-- Add more project cards below as needed -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white mt-12 py-6">
+    <div class="max-w-7xl mx-auto px-6 text-sm flex flex-col sm:flex-row justify-between items-center">
+      <p>&copy; 2025 Balasubrahmanya. All rights reserved.</p>
+      <div class="space-x-4 mt-2 sm:mt-0">
+        <a href="#" class="hover:underline">LinkedIn</a>
+        <a href="https://github.com/bsubba3002" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+        <a href="#" class="hover:underline">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOGGLE SCRIPT -->
+  <script>
+    function toggleDetails(button) {
+      const card = button.closest("div");
+      const details = card.querySelector(".details");
+      const icon = button.querySelector("span");
+      if (details.classList.contains("hidden")) {
+        details.classList.remove("hidden");
+        icon.textContent = "–";
+      } else {
+        details.classList.add("hidden");
+        icon.textContent = "+";
+      }
+    }
+  </script>
+
+</body>
+</html>
