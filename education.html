@@ -55,15 +55,55 @@
 <body class="text-gray-800">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow-md py-4 px-6 flex justify-center gap-6 text-blue-600 font-semibold sticky top-0 z-10">
-    <a href="index.html">Home</a>
-    <a href="education.html" class="text-blue-900 underline">Education</a>
-    <a href="internships.html">Internships</a>
-    <a href="skills.html">Skills</a>
-    <a href="projects.html">Projects</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="hackathons.html">Hackathons</a>
-    <a href="personal.html">Personal</a>
+ <nav class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-blue-600 font-extrabold text-xl">
+          <a href="index.html">Balasubrahmanya</a>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+            <!-- Hamburger (☰) -->
+            <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+
+            <!-- Close (✖) -->
+            <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex space-x-6 text-blue-600 font-semibold">
+          <a href="index.html">Home</a>
+          <a href="education.html">Education</a>
+          <a href="internships.html">Internships</a>
+          <a href="skills.html">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="hackathons.html">Hackathons</a>
+          <a href="personal.html">Personal</a>
+        </div>
+      </div>
+
+      <!-- Mobile Links -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 mt-2 pb-4 text-blue-600 font-semibold">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="internships.html">Internships</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="hackathons.html">Hackathons</a>
+        <a href="personal.html">Personal</a>
+      </div>
+    </div>
   </nav>
 
   <!-- Main Content -->
@@ -86,7 +126,7 @@
             <div class="specialization">
               <p class="font-semibold mt-2">Subjects</p>
               <ul class="list-disc list-inside">
-              <li>Machine Learning (ML)</li>
+                 <li>Machine Learning (ML)</li>
             <li>Artificial Intelligence (AI)</li>
             <li>Deep Learning</li>
             <li>Natural Language Processing (NLP)</li>
