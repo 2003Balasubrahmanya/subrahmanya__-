@@ -123,6 +123,14 @@
           <a href="https://www.linkedin.com/in/bala-subrahmanya-413221257" class="text-blue-600 hover:underline">linkedin.com/in/balasubrahmanya</a></li>
         <li><i data-feather="github" class="text-blue-600 mr-2"></i><strong>GitHub:</strong> 
           <a href="https://github.com/bsubba3002" class="text-blue-600 hover:underline">github.com/bsubba3002</a></li>
+          <li>
+  <i data-feather="instagram" class="text-blue-600 mr-2"></i>
+  <strong>Instagram:</strong>
+  <a href="https://instagram.com/_2003.subrahmanya_" class="text-blue-600 hover:underline" target="_blank">
+    instagram.com/_2003.subrahmanya_
+  </a>
+</li>
+
       </ul>
     </section>
 
@@ -138,16 +146,44 @@
       </ul>
     </section>
 
-    <!-- Social Media -->
-    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8" data-aos="fade-up">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">🌐 Social Media</h2>
-      <ul class="text-gray-700 space-y-2">
-        <li><strong>Twitter:</strong> <a href="https://twitter.com/yourusername" class="text-blue-600 hover:underline">twitter.com/yourusername</a></li>
-        <li><strong>Facebook:</strong> <a href="https://facebook.com/yourusername" class="text-blue-600 hover:underline">facebook.com/yourusername</a></li>
-        <li><strong>Instagram:</strong> <a href="https://instagram.com/yourusername" class="text-blue-600 hover:underline">instagram.com/yourusername</a></li>
-      </ul>
-    </section>
+ 
   </div>
+<!-- Gallery Section -->
+<section id="gallery" class="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+  <div class="max-w-xl mx-auto px-6 text-center">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-8">Image Gallery</h2>
+
+    <!-- Image Carousel -->
+    <div class="relative w-80 h-48 mx-auto overflow-hidden rounded-lg shadow-lg border border-blue-200">
+      <img 
+        id="carousel-image" 
+        src="images/img1.jpeg" 
+        class="w-full h-full object-cover transition-all duration-700 ease-in-out" 
+        alt="Sliding Image"
+      >
+    </div>
+  </div>
+</section>
+
+<!-- Carousel Script -->
+<script>
+  const imagePaths = [
+    "images/a/web-development.png",
+    "images/a/AI.png",
+    "images/a/ML.png",
+    "images/a/VR.png",
+    "images/a/PM.png"
+  ];
+
+  let currentIndex = 0;
+  const imgElement = document.getElementById("carousel-image");
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % imagePaths.length;
+    imgElement.src = imagePaths[currentIndex];
+  }, 3000);
+</script>
+
 
   <!-- Footer -->
   <footer class="mt-16 text-center text-gray-600 text-sm">
