@@ -69,7 +69,18 @@
       </div>
     </div>
   </nav>
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
 
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <header class="text-center mb-10">
       <h1 class="text-4xl font-extrabold text-blue-700">Projects</h1>
