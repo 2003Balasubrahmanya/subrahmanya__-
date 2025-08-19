@@ -19,20 +19,9 @@
     }
   </style>
 </head>
- <nav class="bg-white shadow-md sticky top-0 z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="text-blue-600 font-extrabold text-xl">
-          <a href="index.html">Balasubrahmanya</a>
-        </div>
+<body>
 
-        <!-- Hamburger Icon -->
-        <!-- 🌟 Super Cool Glassy Responsive Navbar -->
-<nav class="backdrop-blur-md bg-white/70 shadow-lg sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 sm:px-8">
-    <div class="flex justify-between items-center h-16">
-
-     <!-- 🌟 Super Cool Glassy Responsive Navbar -->
+<!-- 🌟 Super Cool Glassy Responsive Navbar -->
 <nav class="backdrop-blur-md bg-white/70 shadow-lg sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-6 sm:px-8">
     <div class="flex justify-between items-center h-16">
@@ -87,7 +76,49 @@
   </div>
 </nav>
 
-<!-- Animation Script -->
+<!-- ✅ Projects Section -->
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <header class="text-center mb-10">
+    <h1 class="text-4xl font-extrabold text-blue-700">Projects</h1>
+    <p class="text-gray-600 mt-2 text-lg">A glimpse into the work I’ve built</p>
+  </header>
+
+  <!-- Project: SkillSync -->
+  <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-blue-600 mb-4">
+      🚀 SkillSync – AI-Powered Skill Gap Analyzer
+    </h2>
+
+    <img src="images/skill_sync.jpg" 
+         alt="SkillSync Screenshot" 
+         class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
+
+    <p class="text-gray-700 text-lg mb-4">
+      SkillSync is a smart web app that identifies skill gaps by comparing user skills with job descriptions using AI. 
+      It helps learners and professionals find what they’re missing and provides a personalized upskilling roadmap.
+    </p>
+
+    <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
+      <li>✅ Skill-to-job matching with NLP</li>
+      <li>📉 Highlights missing or weak skills</li>
+      <li>📚 Personalized upskilling recommendations</li>
+      <li>🔁 Keeps users aligned with job market trends</li>
+    </ul>
+
+    <p class="text-gray-700 text-lg mb-4">
+      <strong>Tech Stack:</strong> Python, Flask, TensorFlow, Scikit-learn, HTML5, Tailwind CSS
+    </p>
+
+    <div class="bg-gray-100 p-4 rounded-lg mb-4 text-gray-800">
+      <p class="font-semibold mb-2">📊 Sample Output:</p>
+      <p><strong>Matched Skills:</strong> Python, SQL</p>
+      <p><strong>Missing Skills:</strong> TensorFlow, Data Visualization</p>
+      <p><strong>Suggestions:</strong> Learn TensorFlow and tools like Power BI</p>
+    </div>
+  </section>
+</div>
+
+<!-- Script -->
 <script>
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -109,56 +140,12 @@
           link.style.transition = "all 0.4s ease-in-out";
           link.style.opacity = 1;
           link.style.transform = "translateX(0)";
-        }, index * 150); // staggered delay
+        }, index * 150);
       });
     }
   });
 </script>
 
-
-<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <header class="text-center mb-10">
-      <h1 class="text-4xl font-extrabold text-blue-700">Projects</h1>
-      <p class="text-gray-600 mt-2 text-lg">A glimpse into the work I’ve built</p>
-    </header>
-
-<!-- ✅ Project Section: SKILL-SYNC -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <!-- Project Title -->
-  <h2 class="text-2xl font-bold text-blue-600 mb-4">
-    🚀 SkillSync – AI-Powered Skill Gap Analyzer
-  </h2>
-
-  <!-- Project Screenshot -->
-  <img src="images/skill_sync.jpg" 
-       alt="SkillSync Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Project Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    SkillSync is a smart web app that identifies skill gaps by comparing user skills with job descriptions using AI. It helps learners and professionals find what they’re missing and provides a personalized upskilling roadmap.
-  </p>
-
-  <!-- Key Features -->
-  <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
-    <li>✅ Skill-to-job matching with NLP</li>
-    <li>📉 Highlights missing or weak skills</li>
-    <li>📚 Personalized upskilling recommendations</li>
-    <li>🔁 Keeps users aligned with job market trends</li>
-  </ul>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Stack:</strong> Python, Flask, TensorFlow, Scikit-learn, HTML5, Tailwind CSS
-  </p>
-
-  <!-- Sample Output Block -->
-  <div class="bg-gray-100 p-4 rounded-lg mb-4 text-gray-800">
-    <p class="font-semibold mb-2">📊 Sample Output:</p>
-    <p><strong>Matched Skills:</strong> Python, SQL</p>
-    <p><strong>Missing Skills:</strong> TensorFlow, Data Visualization</p>
-    <p><strong>Suggestions:</strong> Learn TensorFlow and tools like Power BI</p>
-  </div>
 
   <!-- Action Buttons -->
   <div class="flex flex-col sm:flex-row gap-4 mt-4">
