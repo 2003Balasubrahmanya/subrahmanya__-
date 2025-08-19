@@ -48,21 +48,13 @@
   <script>
     // Initialize AOS (Animate On Scroll)
     document.addEventListener('DOMContentLoaded', function() {
-      AOS.init(); // Initializes AOS for animations
+      AOS.init();
     });
   </script>
 </head>
 <body class="text-gray-800">
 
-  <!-- Navbar -->
- <nav class="bg-white shadow-md sticky top-0 z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="text-blue-600 font-extrabold text-xl">
-          <a href="index.html">Balasubrahmanya</a>
-        </div>
-
-       <!-- 🌟 Super Cool Glassy Responsive Navbar -->
+<!-- 🌟 Super Cool Glassy Responsive Navbar -->
 <nav class="backdrop-blur-md bg-white/70 shadow-lg sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-6 sm:px-8">
     <div class="flex justify-between items-center h-16">
@@ -102,7 +94,7 @@
       </div>
     </div>
 
-    <!-- Mobile Menu (Glassy List Style) -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden flex-col mt-3 pb-4 space-y-2 
                                 backdrop-blur-md bg-white/60 shadow-lg rounded-xl p-3">
       <a href="index.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Home</a>
@@ -117,7 +109,7 @@
   </div>
 </nav>
 
-<!-- Animation Script -->
+<!-- ✅ Animation Script -->
 <script>
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -129,7 +121,6 @@
     hamburgerIcon.classList.toggle("hidden");
     closeIcon.classList.toggle("hidden");
 
-    // Animate links one by one
     if (!mobileMenu.classList.contains("hidden")) {
       const links = document.querySelectorAll(".mobile-link");
       links.forEach((link, index) => {
@@ -139,12 +130,11 @@
           link.style.transition = "all 0.4s ease-in-out";
           link.style.opacity = 1;
           link.style.transform = "translateX(0)";
-        }, index * 150); // staggered delay
+        }, index * 150);
       });
     }
   });
 </script>
-
 
   <!-- Main Content -->
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
