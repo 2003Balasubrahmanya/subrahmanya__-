@@ -448,6 +448,43 @@
     setInterval(moveCarousel, 6000);
   </script>
 </section>
+<!-- Chatbot Button Floating in Bottom Right Corner -->
+<div id="chatbot-btn" onclick="openChatbot()" title="Chat with us!">
+  🤖
+</div>
+
+<style>
+  /* Inline CSS for Floating Button */
+  #chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffa366;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 9999;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  #chatbot-btn:hover {
+    background-color: #ff8c1a;
+    transform: scale(1.1) rotate(5deg);
+  }
+</style>
+
+<script>
+  // Inline JS: Open chatbot.html in new small window
+  function openChatbot() {
+    window.open('chatbot.html', 'ChatbotWindow', 'width=400,height=600');
+  }
+</script>
 
   <!-- Footer -->
   <footer class="text-center mt-12 text-sm text-gray-500">
