@@ -3,616 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balasubrahmanya | Portfolio</title>
+  <title>Web Projects | Portfolio</title>
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
+  <!-- Inline CSS for Animation -->
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    }
     html {
       scroll-behavior: smooth;
     }
+
+    .category-btn {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      font-size: 1.25rem; /* text-xl */
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .category-btn:hover {
+      transform: scale(1.05) translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .category-btn:nth-child(1) { animation-delay: 0.2s; }
+    .category-btn:nth-child(2) { animation-delay: 0.4s; }
+    .category-btn:nth-child(3) { animation-delay: 0.6s; }
+    .category-btn:nth-child(4) { animation-delay: 0.8s; }
+    .category-btn:nth-child(5) { animation-delay: 1s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
-<body>
 
-<!-- 🌟 Super Cool Glassy Responsive Navbar -->
-<nav class="backdrop-blur-md bg-white/70 shadow-lg sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 sm:px-8">
-    <div class="flex justify-between items-center h-16">
+<body class="bg-gray-50 text-gray-800">
 
-      <!-- Logo -->
-      <div class="text-blue-600 font-extrabold text-2xl tracking-wide hover:scale-110 transition-transform duration-300">
-        <a href="index.html">Balasubrahmanya</a>
+  <!-- ✅ Responsive Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-blue-600 font-extrabold text-xl">
+          <a href="index.html">Balasubrahmanya</a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+            <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex space-x-6 text-blue-600 font-semibold">
+          <a href="index.html">Home</a>
+          <a href="education.html">Education</a>
+          <a href="internships.html">Internships</a>
+          <a href="skills.html">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="hackathons.html">Hackathons</a>
+          <a href="personal.html">Personal</a>
+        </div>
       </div>
 
-      <!-- Hamburger Icon (Mobile) -->
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-blue-600 focus:outline-none">
-          <!-- Hamburger (☰) -->
-          <svg id="hamburger-icon" class="h-7 w-7 block" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-
-          <!-- Close (✖) -->
-          <svg id="close-icon" class="h-7 w-7 hidden" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Desktop Links -->
-      <div class="hidden md:flex space-x-8 text-blue-600 font-semibold text-lg">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="education.html" class="nav-link">Education</a>
-        <a href="internships.html" class="nav-link">Internships</a>
-        <a href="skills.html" class="nav-link">Skills</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="certifications.html" class="nav-link">Certifications</a>
-        <a href="hackathons.html" class="nav-link">Hackathons</a>
-        <a href="personal.html" class="nav-link">Personal</a>
+      <!-- Mobile Links -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 mt-3 pb-4 text-blue-600 font-semibold">
+        <a href="index.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Home</a>
+        <a href="education.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Education</a>
+        <a href="internships.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Internships</a>
+        <a href="skills.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Skills</a>
+        <a href="projects.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Projects</a>
+        <a href="certifications.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Certifications</a>
+        <a href="hackathons.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Hackathons</a>
+        <a href="personal.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Personal</a>
       </div>
     </div>
+  </nav>
 
-    <!-- Mobile Menu (Glassy List Style) -->
-    <div id="mobile-menu" class="hidden md:hidden flex-col mt-3 pb-4 space-y-2 
-                                backdrop-blur-md bg-white/60 shadow-lg rounded-xl p-3">
-      <a href="index.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Home</a>
-      <a href="education.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Education</a>
-      <a href="internships.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Internships</a>
-      <a href="skills.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Skills</a>
-      <a href="projects.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Projects</a>
-      <a href="certifications.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Certifications</a>
-      <a href="hackathons.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Hackathons</a>
-      <a href="personal.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Personal</a>
-    </div>
-  </div>
-</nav>
+  <!-- ✅ JavaScript for Mobile Menu -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
 
-<!-- ✅ Projects Section -->
-<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-  <header class="text-center mb-10">
-    <h1 class="text-4xl font-extrabold text-blue-700">Projects</h1>
-    <p class="text-gray-600 mt-2 text-lg">A glimpse into the work I’ve built</p>
-  </header>
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
 
-  <!-- Project: SkillSync -->
-  <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-bold text-blue-600 mb-4">
-      🚀 SkillSync – AI-Powered Skill Gap Analyzer
-    </h2>
+  <!-- ✅ Main Section with Animated Buttons -->
+  <main class="max-w-4xl mx-auto px-4 py-20 text-center">
 
-    <img src="images/skill_sync.jpg" 
-         alt="SkillSync Screenshot" 
-         class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
+  <h2 class="text-4xl font-extrabold text-blue-700 mb-12">Explore My Work</h2>
 
-    <p class="text-gray-700 text-lg mb-4">
-      SkillSync is a smart web app that identifies skill gaps by comparing user skills with job descriptions using AI. 
-      It helps learners and professionals find what they’re missing and provides a personalized upskilling roadmap.
-    </p>
-
-    <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
-      <li>✅ Skill-to-job matching with NLP</li>
-      <li>📉 Highlights missing or weak skills</li>
-      <li>📚 Personalized upskilling recommendations</li>
-      <li>🔁 Keeps users aligned with job market trends</li>
-    </ul>
-
-    <p class="text-gray-700 text-lg mb-4">
-      <strong>Tech Stack:</strong> Python, Flask, TensorFlow, Scikit-learn, HTML5, Tailwind CSS
-    </p>
-
-    <div class="bg-gray-100 p-4 rounded-lg mb-4 text-gray-800">
-      <p class="font-semibold mb-2">📊 Sample Output:</p>
-      <p><strong>Matched Skills:</strong> Python, SQL</p>
-      <p><strong>Missing Skills:</strong> TensorFlow, Data Visualization</p>
-      <p><strong>Suggestions:</strong> Learn TensorFlow and tools like Power BI</p>
-    </div>
-  </section>
+<div class="flex flex-col space-y-6 items-center">
+  <a href="projects/AI_ML.html" class="category-btn bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-center">AI / ML</a>
+  <a href="projects/Generative_AI.html" class="category-btn bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center">Generative AI</a>
+  <a href="projects/AR.html" class="category-btn bg-gradient-to-r from-green-500 to-teal-500 text-white text-center">AR / VR</a>
+  <a href="projects/Miscellaneous.html" class="category-btn bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-center">Miscellaneous</a>
+  <a href="projects/web.html" class="category-btn bg-gradient-to-r from-cyan-500 to-blue-400 text-white text-center">Web Development</a>
 </div>
 
-<!-- Script -->
-<script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const hamburgerIcon = document.getElementById("hamburger-icon");
-  const closeIcon = document.getElementById("close-icon");
-
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    hamburgerIcon.classList.toggle("hidden");
-    closeIcon.classList.toggle("hidden");
-
-    // Animate links one by one
-    if (!mobileMenu.classList.contains("hidden")) {
-      const links = document.querySelectorAll(".mobile-link");
-      links.forEach((link, index) => {
-        link.style.opacity = 0;
-        link.style.transform = "translateX(-20px)";
-        setTimeout(() => {
-          link.style.transition = "all 0.4s ease-in-out";
-          link.style.opacity = 1;
-          link.style.transform = "translateX(0)";
-        }, index * 150);
-      });
-    }
-  });
-</script>
-
-
-  <!-- Action Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://skill-sync-w3uc.onrender.com/" 
-       class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition text-center">
-       🌐 Live Demo
-    </a>
-    <a href="https://github.com/bsubba3002/SKILL-SYNC" 
-       class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-<!-- 🔚 End of SKILL-SYNC Project Section -->
-
-
-
-
-
-
-    <!-- Project 2: Sugandha Bhavan -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <!-- Title -->
-  <h2 class="text-2xl font-bold text-pink-600 mb-4">🌸 Sugandha Bhavan</h2>
-
-  <!-- Screenshot -->
-  <img src="images/Sugandha Bhavan.jpg" 
-       alt="Sugandha Bhavan Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    A calm and elegant static website that highlights traditional Indian wellness products and aromatic heritage. Ideal for small businesses or personal portfolios.
-  </p>
-
-  <!-- Tech Used -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> HTML5, CSS3, JavaScript, GitHub Pages
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://bsubba3002.github.io/Sugandha-Bhavan/index.html" 
-       class="bg-pink-600 text-white px-5 py-2 rounded-lg hover:bg-pink-700 transition text-center">
-       🌐 Live Demo
-    </a>
-    <a href="https://github.com/bsubba3002/Sugandha-Bhavan" 
-       class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-
-
-
-    <!-- Project 3: malnad-travels-website-->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <!-- Title -->
-  <h2 class="text-2xl font-bold text-green-700 mb-4">🌄 Malnad Travels Website</h2>
-
-  <!-- Screenshot -->
-  <img src="images/malnad-travels-website.jpg" 
-       alt="Malnad Travels Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    A visually rich static website promoting tourism in the lush Malnad region of Karnataka. It highlights destinations, tour packages, and cultural experiences — perfect for small travel agencies or regional tourism showcases.
-  </p>
-
-  <!-- Tech Used -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> HTML5, CSS3, JavaScript, Bootstrap
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://bsubba3002.github.io/malnad-travels-website" 
-       class="bg-green-700 text-white px-5 py-2 rounded-lg hover:bg-green-800 transition text-center">
-       🌐 Live Demo
-    </a>
-    <a href="https://github.com/bsubba3002/malnad-travels-website" 
-       class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-
-    <!-- Project 4: Om.ai -->
- <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <!-- Title -->
-  <h2 class="text-2xl font-bold text-purple-700 mb-4">🌸 Om.ai – Your AI Guide to Indian Knowledge Systems 🕉️</h2>
-
-  <!-- Screenshot -->
-  <img src="images/om-ai.jpg" 
-       alt="Om.ai Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    Om.ai is an AI-powered chatbot designed to explore the timeless wisdom of Bharatiya Parampara (Indian traditions). From Ayurveda to Vedic science, it answers your questions with cultural depth and clarity — perfect for curious learners, spiritual seekers, and knowledge enthusiasts.
-  </p>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> HTML, CSS, JavaScript, Google Fonts, Python, OpenAI API, Render Hosting
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://om-ai.onrender.com" 
-       class="bg-purple-700 text-white px-5 py-2 rounded-lg hover:bg-purple-800 transition text-center">
-       🌐 Live Demo
-    </a>
-    <a href="https://github.com/bsubba3002/om.ai" 
-       class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-
-
-    <!-- Project 5:  unity-virtual-reality-Ayodhya- -->
-  <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <!-- Title -->
-  <h2 class="text-2xl font-bold text-yellow-700 mb-4">🕶️ Ayodhya VR – Immersive Cultural Experience</h2>
-
-  <!-- Screenshot -->
-  <img src="images/ayodhya_vr_screenshot.png" 
-       alt="Ayodhya VR Experience Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    A virtual reality journey through the sacred city of Ayodhya, designed to immerse users in its cultural, historical, and spiritual essence. Explore ancient temples, listen to interactive stories, and learn about India's heritage in an engaging, gamified format.
-  </p>
-
-  <!-- Tech Used -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> Unity, C#, 3D Modeling, VR SDKs (e.g., Oculus/SteamVR), Blender
-  </p>
-
-  <!-- Note (No GitHub/Live Demo) -->
-  <p class="text-gray-600 italic text-base">
-    *This is an offline Unity-based project not currently hosted online.*
-  </p>
-</section>
-
-
-    <!-- Project 6:ML -->
- <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold text-indigo-700 mb-4">🧠 Machine Learning Experiments & Notebooks</h2>
-
-  <img src="images/ml_notebook_screenshot.png" 
-       alt="ML Notebook Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <p class="text-gray-700 text-lg mb-4">
-    A collection of well-documented Jupyter Notebooks covering essential machine learning techniques. Includes end-to-end implementations of real-world ML tasks using Python and scikit-learn.
-  </p>
-
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> Python, Jupyter, NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn
-  </p>
-
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://github.com/bsubba3002/machine-learning-" 
-       class="bg-indigo-700 text-white px-5 py-2 rounded-lg hover:bg-indigo-800 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-
-
-    <!-- Project 7: NLP -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold text-rose-700 mb-4">📊 Natural Language Processing – Python Notebooks</h2>
-
-  <!-- Screenshot -->
-  <img src="images/nlp_notebook_screenshot.png" 
-       alt="NLP Notebook Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    A hands-on NLP project built with Jupyter Notebooks, exploring the foundations of Natural Language Processing. Topics range from basic preprocessing to text classification using classic ML models.
-  </p>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> Python, Jupyter, NLTK, scikit-learn, pandas, Matplotlib
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://github.com/bsubba3002/natural_language_processing-" 
-       class="bg-rose-700 text-white px-5 py-2 rounded-lg hover:bg-rose-800 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-
-
-    <!-- Project 8: intern -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold text-teal-700 mb-4">🧑‍💻 NativeSoftTech Internship – Data & ML Projects</h2>
-
-  <!-- Screenshot -->
-  <img src="images/nativesofttech_internship.png" 
-       alt="Internship Project Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    A collection of real-world tasks completed during my internship at NativeSoftTech, covering data analysis, visualization, and machine learning experiments. Each notebook demonstrates problem-solving, practical implementation, and clear reporting.
-  </p>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> Python, Jupyter, pandas, NumPy, scikit-learn, Matplotlib, Seaborn
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://github.com/bsubba3002/NativeSoftTech_internship-" 
-       class="bg-teal-700 text-white px-5 py-2 rounded-lg hover:bg-teal-800 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-
-
-    <!-- Project 9: Medi_Sync - Smart Healthcare Connect -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold text-emerald-700 mb-4">💊 Medi_Sync – Smart Healthcare Connect</h2>
-
-  <!-- Screenshot -->
-  <img src="images/MEDI-SYNC.jpg" 
-       alt="Medi_Sync Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    Medi_Sync is a user-friendly healthcare website designed to simplify communication between patients and doctors. It offers an efficient platform for appointment booking, doctor profiling, and sharing health-related information.
-  </p>
-
-  <!-- Features -->
-  <h3 class="text-xl font-semibold text-emerald-600 mb-2">🔹 Key Features</h3>
-  <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
-    <li><strong>Doctor Profiles:</strong> Detailed profiles showcasing doctors' qualifications, specialties, and contact info to help patients choose the right healthcare provider.</li>
-    <li><strong>Appointment Booking:</strong> Simple and intuitive booking form for patients to schedule consultations quickly and easily.</li>
-    <li><strong>Health Service Details:</strong> Clear information about the available healthcare services, treatments, and specialties offered.</li>
-    <li><strong>Responsive Design:</strong> Optimized for mobile and desktop, ensuring smooth user experience across devices.</li>
-    <li><strong>Contact & Support:</strong> Easy-to-use contact form for inquiries, feedback, and support requests.</li>
-  </ul>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> HTML, CSS, JavaScript
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://medi-sync-j3ou.onrender.com/" 
-       class="bg-emerald-700 text-white px-5 py-2 rounded-lg hover:bg-emerald-800 transition text-center">
-       🌐 Live Demo
-    </a>
-  </div>
-</section>
-
-<!-- Project 10: Bhojanalay – Authentic Dining Experience -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold text-red-600 mb-4">🏡 Bhojanalay – Authentic Dining Experience</h2>
-
-  <!-- Screenshot -->
-  <img src="images/bjojanalaya.jpg" 
-       alt="Bhojanalay Website Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    Bhojanalay is a vibrant and inviting restaurant website designed to showcase delicious menu offerings, outlet locations, and easy table reservations. It aims to attract food lovers by offering a seamless browsing and booking experience.
-  </p>
-
-  <!-- Features -->
-  <h3 class="text-xl font-semibold text-red-500 mb-2">🔹 Key Features</h3>
-  <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
-    <li><strong>Interactive Menu:</strong> A clear, visually appealing menu section highlighting popular dishes with images and prices.</li>
-    <li><strong>Table Booking:</strong> Easy-to-use booking or contact form to reserve tables for a hassle-free dining experience.</li>
-    <li><strong>Outlet Information:</strong> Details about restaurant locations, hours of operation, and contact details.</li>
-    <li><strong>Gallery:</strong> High-quality images of dishes and the dining ambiance to entice visitors.</li>
-    <li><strong>Responsive Design:</strong> Fully optimized for mobile and desktop devices ensuring smooth navigation.</li>
-  </ul>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> HTML, CSS, JavaScript
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="#" 
-       class="bg-red-600 text-white px-5 py-2 rounded-lg hover:bg-red-700 transition text-center">
-       🌐 Live Demo
-    </a>
-    <a href="#" 
-       class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-
-
-</section>
-
-<!-- Project 11: Snake_Game – Classic Web Game -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold text-green-700 mb-4">🎮 Snake_Game – Classic Web Game</h2>
-
-  <!-- Screenshot -->
-  <img src="images/snake.jpg" 
-       alt="Snake Game Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    A classic Snake game implemented as a responsive web app. Control the snake using arrow keys, track your score, and enjoy simple yet addictive gameplay.
-  </p>
-
-  <!-- Features -->
-  <h3 class="text-xl font-semibold text-green-600 mb-2">🔹 Key Features</h3>
-  <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
-    <li><strong>Arrow Key Controls:</strong> Smooth and responsive control using keyboard arrow keys.</li>
-    <li><strong>Score Tracking:</strong> Real-time display of player’s score to keep track of progress.</li>
-    <li><strong>Fun Gameplay:</strong> Simple, classic, and addictive game mechanics for entertainment.</li>
-  </ul>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> HTML, CSS, JavaScript
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="#" 
-       class="bg-green-700 text-white px-5 py-2 rounded-lg hover:bg-green-800 transition text-center">
-       🌐 Live Demo
-    </a>
-    <a href="#" 
-       class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-<!-- Project 12: XOXO-Galaxy – Space-Themed Interactive Website -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold text-purple-700 mb-4">⭐ XOXO-Galaxy – Space-Themed Interactive Website</h2>
-
-  <!-- Screenshot -->
-  <img src="images/tic tack toe.jpg" 
-       alt="XOXO-Galaxy Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    XOXO-Galaxy is a creative web project featuring galaxy and space visuals combined with interactive elements. Designed to engage users with a cosmic theme, it showcases modern web design and dynamic user experience.
-  </p>
-
-  <!-- Features -->
-  <h3 class="text-xl font-semibold text-purple-600 mb-2">🔹 Key Features</h3>
-  <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
-    <li><strong>Stunning Galaxy Visuals:</strong> Animated backgrounds and space-themed graphics create an immersive cosmic atmosphere.</li>
-    <li><strong>Interactive Elements:</strong> User interactions such as hover effects, clickable objects, or animations enhance engagement.</li>
-    <li><strong>Responsive Design:</strong> Optimized for smooth performance across desktop and mobile devices.</li>
-  </ul>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> HTML, CSS, JavaScript, CSS Animations
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://xoxo-galaxy.onrender.com/" 
-       class="bg-purple-700 text-white px-5 py-2 rounded-lg hover:bg-purple-800 transition text-center">
-       🌐 Live Demo
-    </a>
-    <a href="https://github.com/bsubba3002/XOXO-Galaxy" 
-       class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-<!-- Project 13: NS-ENTERPRISES – Business Website -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold text-blue-800 mb-4">🏢 NS-ENTERPRISES – Business Website</h2>
-
-  <!-- Screenshot -->
-  <img src="images/NS.jpg" 
-       alt="NS-ENTERPRISES Website Screenshot" 
-       class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    NS-ENTERPRISES is a professional static business website designed to showcase company services, product offerings, and essential contact information. Ideal for small to mid-sized businesses seeking a credible online presence.
-  </p>
-
-  <!-- Features -->
-  <h3 class="text-xl font-semibold text-blue-600 mb-2">🔹 Key Features</h3>
-  <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
-    <li><strong>Company Overview:</strong> Clear and concise information about the business, mission, and values.</li>
-    <li><strong>Services Section:</strong> Describes what NS Enterprises offers in a user-friendly layout.</li>
-    <li><strong>Product Highlights:</strong> Displays featured products or solutions offered by the company.</li>
-    <li><strong>Contact Information:</strong> Includes email, phone, and location details for business inquiries.</li>
-    <li><strong>Responsive Layout:</strong> Optimized for seamless viewing on both desktop and mobile devices.</li>
-  </ul>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> HTML, CSS, JavaScript
-  </p>
-
-  <!-- Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://bsubba3002.github.io/NS-ENTERPRISES/" 
-       class="bg-blue-800 text-white px-5 py-2 rounded-lg hover:bg-blue-900 transition text-center">
-       🌐 Live Demo
-    </a>
-    <a href="https://github.com/bsubba3002/NS-ENTERPRISES" 
-       class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-
-<!-- Project 14: YouTube_download – Simple Downloader UI -->
-<section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold text-red-600 mb-4">📥 YouTube_download – Video Downloader UI</h2>
-
-  <!-- Screenshot -->
-
-  <!-- Description -->
-  <p class="text-gray-700 text-lg mb-4">
-    YouTube_download is a front-end interface designed for downloading YouTube videos. It provides a clean and intuitive layout where users can input a video URL and select formats. Intended to be used with a backend like <code>pytube</code> or <code>youtube-dl</code> for full functionality.
-  </p>
-
-  <!-- Features -->
-  <h3 class="text-xl font-semibold text-red-500 mb-2">🔹 Key Features</h3>
-  <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
-    <li><strong>Simple UI:</strong> Clean input field for video URL with clear instructions.</li>
-    <li><strong>Download Button:</strong> Ready-to-hook interface for triggering downloads via backend.</li>
-    <li><strong>Extensible Design:</strong> Easily integrates with backend APIs to handle actual download logic.</li>
-    <li><strong>Responsive Layout:</strong> Mobile-friendly design with adaptive layout.</li>
-  </ul>
-
-  <!-- Tech Stack -->
-  <p class="text-gray-700 text-lg mb-4">
-    <strong>Tech Used:</strong> HTML, CSS, JavaScript
-  </p>
-
-  <!-- GitHub Button -->
-  <div class="flex flex-col sm:flex-row gap-4 mt-4">
-    <a href="https://github.com/bsubba3002/YouTube_download" 
-       class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition text-center">
-       📁 GitHub Repo
-    </a>
-  </div>
-</section>
-
-  </div>give one bu one prohect in detail
+</main>
+
+
+  <!-- ✅ Footer -->
+  <footer class="bg-gray-900 text-white mt-12 py-6">
+    <div class="max-w-7xl mx-auto px-6 text-sm flex flex-col sm:flex-row justify-between items-center">
+      <p>&copy; 2025 Balasubrahmanya. All rights reserved.</p>
+      <div class="space-x-4 mt-2 sm:mt-0">
+        <a href="#" class="hover:underline">LinkedIn</a>
+        <a href="https://github.com/bsubba3002" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+        <a href="#" class="hover:underline">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>
