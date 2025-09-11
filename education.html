@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Education | Balasubrahmanya</title>
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  
-  <!-- AOS (Animate On Scroll) -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
     body {
@@ -27,7 +26,6 @@
       transform: translateY(-4px);
     }
 
-
     .specialization {
       margin-top: 1rem;
       font-style: italic;
@@ -39,17 +37,10 @@
       margin-right: 10px;
     }
   </style>
-
-  <script>
-    // Initialize AOS (Animate On Scroll)
-    document.addEventListener('DOMContentLoaded', function() {
-      AOS.init();
-    });
-  </script>
 </head>
 <body class="text-gray-800">
 
-<!-- 🌟 Super Cool Glassy Responsive Navbar -->
+<!-- Navbar -->
 <nav class="backdrop-blur-md bg-white/70 shadow-lg sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-6 sm:px-8">
     <div class="flex justify-between items-center h-16">
@@ -61,7 +52,7 @@
 
       <!-- Hamburger Icon (Mobile) -->
       <div class="md:hidden">
-        <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+        <button id="menu-toggle" class="text-blue-600 focus:outline-none" aria-label="Toggle menu">
           <!-- Hamburger (☰) -->
           <svg id="hamburger-icon" class="h-7 w-7 block" fill="none" stroke="currentColor" stroke-width="2"
             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
@@ -104,8 +95,117 @@
   </div>
 </nav>
 
-<!-- ✅ Animation Script -->
+<!-- Main Content -->
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="education">
+  <header class="text-center mb-10" data-aos="fade-down">
+    <h1 class="text-4xl font-extrabold text-blue-700">Education</h1>
+    <p class="text-gray-600 mt-2 text-lg">Academic Background</p>
+  </header>
+
+  <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+    <ul>
+      <!-- BE in AI & ML -->
+      <li class="flex items-start gap-4 mb-8" data-aos="fade-right">
+        <img src="images/VCET.png" alt="Vivekananda College Logo"
+             class="w-12 h-12 object-contain mt-1 rounded-md" />
+        <div>
+          <a href="https://vcetputtur.ac.in/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
+            BE in AI & ML – Vivekananda College of Engineering and Technology, Puttur (2026)
+          </a>
+          <div class="specialization mt-2">
+            <p class="font-semibold mb-1">Subjects:</p>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Machine Learning (ML)</li>
+              <li>Artificial Intelligence (AI)</li>
+              <li>Deep Learning</li>
+              <li>Natural Language Processing (NLP)</li>
+              <li>Human-Centered AI (HCAI)</li>
+              <li>Python Programming</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- PU College -->
+      <li class="flex items-start gap-4 mb-8" data-aos="fade-left">
+        <img src="images/srpuc.jpeg" alt="Shri Ram PU College Logo"
+             class="w-12 h-12 object-contain mt-1 rounded-md" />
+        <div>
+          <a href="http://srvk.org/institutions/sri-rama-p-u-college/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
+            Pre-University – Shri Ram PU College, Kalladka (2022)
+          </a>
+          <div class="specialization mt-2">
+            <p class="font-semibold mb-1">Subjects:</p>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Mathematics</li>
+              <li>Physics</li>
+              <li>Computer Science</li>
+              <li>Chemistry</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- SSLC -->
+      <li class="flex items-start gap-4 mb-8" data-aos="fade-right">
+        <img src="images/sudana.jpeg" alt="Sudana Residential School Logo"
+             class="w-12 h-12 object-contain mt-1 rounded-md" />
+        <div>
+          <a href="https://www.sudanaschool.apsys-solutions.in/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
+            SSLC – Sudana Residential School, Puttur (2020)
+          </a>
+          <div class="specialization mt-2">
+            <p class="font-semibold mb-1">Subjects:</p>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>General Studies</li>
+              <li>English</li>
+              <li>Science</li>
+              <li>Social Studies</li>
+              <li>Sanskrit</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- High School -->
+      <li class="flex items-start gap-4" data-aos="fade-left">
+        <img src="images/VEMS.jpeg" alt="Vivekananda English Medium School Logo"
+             class="w-12 h-12 object-contain mt-1 rounded-md" />
+        <div>
+          <a href="https://vemsputtur.com/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
+            High School – Vivekananda English Medium School, Puttur
+          </a>
+          <div class="specialization mt-2">
+            <p class="font-semibold mb-1">Subjects:</p>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Science</li>
+              <li>Mathematics</li>
+              <li>Kannada</li>
+              <li>Social Studies</li>
+              <li>English</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="text-center mt-12 text-sm text-gray-500 pb-8">
+  <p>Designed with ❤️ by Balasubrahmanya</p>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
+  AOS.init({
+    once: true, // animation happens only once while scrolling down
+    duration: 700,
+    easing: 'ease-out-cubic'
+  });
+
+  // Mobile menu toggle
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
   const hamburgerIcon = document.getElementById("hamburger-icon");
@@ -131,126 +231,5 @@
   });
 </script>
 
-  <!-- Main Content -->
-<!-- AOS CSS (include in <head>) -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-<!-- Education Section -->
-<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="education">
-  <header class="text-center mb-10" data-aos="fade-down">
-    <h1 class="text-4xl font-extrabold text-blue-700">Education</h1>
-    <p class="text-gray-600 mt-2 text-lg">Academic Background</p>
-  </header>
-
-  <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8" data-aos="fade-up">
-    
-
-      <!-- BE in AI & ML -->
-      <li class="flex items-start gap-4" data-aos="fade-right">
-        <img src="images/VCET.png" alt="Vivekananda College Logo"
-             class="w-12 h-12 object-contain mt-1 rounded-md" />
-        <div>
-          <a href="https://vcetputtur.ac.in/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
-            BE in AI & ML – Vivekananda College of Engineering and Technology, Puttur (2026)
-          </a>
-          <div class="specialization mt-2">
-            <p class="font-semibold">Subjects:</p>
-            
-              <li>Machine Learning (ML)</li>
-              <li>Artificial Intelligence (AI)</li>
-              <li>Deep Learning</li>
-              <li>Natural Language Processing (NLP)</li>
-              <li>Human-Centered AI (HCAI)</li>
-              <li>Python Programming</li>
-         
-          </div>
-        </div>
-      </li>
-
-      <!-- PU College -->
-      <li class="flex items-start gap-4" data-aos="fade-left">
-        <img src="images/srpuc.jpeg" alt="Shri Ram PU College Logo"
-             class="w-12 h-12 object-contain mt-1 rounded-md" />
-        <div>
-          <a href="http://srvk.org/institutions/sri-rama-p-u-college/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
-            Pre-University – Shri Ram PU College, Kalladka (2022)
-          </a>
-          <div class="specialization mt-2">
-            <p class="font-semibold">Subjects:</p>
-           
-              <li>Mathematics</li>
-              <li>Physics</li>
-              <li>Computer Science</li>
-              <li>Chemistry</li>
-            
-          </div>
-        </div>
-      </li>
-
-      <!-- SSLC -->
-      <li class="flex items-start gap-4" data-aos="fade-right">
-        <img src="images/sudana.jpeg" alt="Sudana Residential School Logo"
-             class="w-12 h-12 object-contain mt-1 rounded-md" />
-        <div>
-          <a href="https://www.sudanaschool.apsys-solutions.in/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
-            SSLC – Sudana Residential School, Puttur (2020)
-          </a>
-          <div class="specialization mt-2">
-            <p class="font-semibold">Subjects:</p>
-            
-              <li>General Studies</li>
-              <li>English</li>
-              <li>Science</li>
-              <li>Social Studies</li>
-              <li>Sanskrit</li>
-            
-          </div>
-        </div>
-      </li>
-
-      <!-- High School -->
-      <li class="flex items-start gap-4" data-aos="fade-left">
-        <img src="images/VEMS.jpeg" alt="Vivekananda English Medium School Logo"
-             class="w-12 h-12 object-contain mt-1 rounded-md" />
-        <div>
-          <a href="https://vemsputtur.com/" target="_blank" class="text-blue-600 font-semibold hover:underline block">
-            High School – Vivekananda English Medium School, Puttur
-          </a>
-          <div class="specialization mt-2">
-            <p class="font-semibold">Subjects:</p>
-            
-              <li>Science</li>
-              <li>Mathematics</li>
-              <li>Kannada</li>
-              <li>Social Studies</li>
-              <li>English</li>
-            
-          </div>
-        </div>
-      </li>
-
-    </ul>
-  </section>
-</div>
-
-<!-- AOS JS (include before </body>) -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-
-  <!-- Footer -->
-  <footer class="text-center mt-12 text-sm text-gray-500">
-    <p>Designed with ❤️ by Balasubrahmanya</p>
-  </footer>
-
-  <script>
-    // Initialize AOS (Animate On Scroll) after content is loaded
-    AOS.init();
-  </script>
-
 </body>
 </html>
-
-
