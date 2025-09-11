@@ -105,43 +105,144 @@
   <div class="max-w-4xl mx-auto px-6 py-10 text-center">
     
     <!-- Profile Image -->
-    <img src="images/DSC_0376.JPG" alt="Balasubrahmanya" class="w-40 h-40 rounded-full mx-auto border-4 border-blue-600 shadow-lg">
+    <img 
+  src="images/Balasubrahmanya.jpeg" 
+  alt="Balasubrahmanya" 
+  class="w-32 sm:w-40 h-32 sm:h-40 rounded-full mx-auto border-4 border-blue-600 shadow-lg object-cover"
+/>
+
 
     <!-- Name and Title -->
     <h1 class="text-2xl sm:text-3xl font-extrabold text-blue-800">Hi, I'm Balasubrahmanya</h1>
 
-    <p class="text-xl text-gray-600 mt-1">Aspiring AI/ML Engineer</p>
+    <p class="text-xl text-gray-600 mt-1"> AI/ML Engineer</p>
+<style>
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
-    <!-- Contact -->
-<div class="mt-6 p-5 max-w-md mx-auto bg-white/70 backdrop-blur-md shadow-lg rounded-xl border border-gray-200 text-center">
-  <h2 class="text-xl font-bold text-blue-700 mb-4">Get in Touch</h2>
+  @media screen and (max-width: 480px) {
+    .contact-card {
+      padding: 1.2rem;
+      width: 90% !important;
+    }
+
+    .contact-card h2 {
+      font-size: 1.25rem !important;
+    }
+
+    .contact-card a, .contact-card p {
+      font-size: 0.95rem !important;
+    }
+
+    .contact-card svg {
+      width: 1.1rem !important;
+      height: 1.1rem !important;
+    }
+  }
+</style>
+
+<div 
+  class="contact-card"
+  style="
+    margin-top: 1.5rem; 
+    padding: 1.5rem 2rem; 
+    width: 100%;
+    max-width: 28rem; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    animation: fadeInScale 0.6s ease forwards;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+  "
+>
+  <h2 
+    style="
+      font-weight: 800; 
+      font-size: 1.5rem; 
+      color: #2563eb; 
+      margin-bottom: 1.2rem;
+      text-shadow: 0 1px 2px rgba(37, 99, 235, 0.5);
+    "
+  >
+    Get in Touch
+  </h2>
   
   <!-- Email -->
-  <p class="flex items-center justify-center gap-2 mb-2 text-gray-700">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <p style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 0.8rem; color: #334155;">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         style="height: 1.25rem; width: 1.25rem; color: #3b82f6; flex-shrink: 0;" 
+         fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 01-8 0M12 14v7m0 0h3m-3 0H9m12-11a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
-    <a href="mailto:balasubrahmanya3002@gmail.com" class="text-blue-600 hover:underline">
+    <a href="mailto:balasubrahmanya3002@gmail.com" 
+       style="
+         color: #3b82f6; 
+         text-decoration: none; 
+         font-weight: 600;
+         transition: color 0.3s ease;
+         cursor: pointer;
+       " 
+       onmouseover="this.style.color='#1e40af'; this.style.textDecoration='underline'" 
+       onmouseout="this.style.color='#3b82f6'; this.style.textDecoration='none'"
+    >
       balasubrahmanya3002@gmail.com
     </a>
   </p>
   
   <!-- Phone -->
-  <p class="flex items-center justify-center gap-2 mb-2 text-gray-700">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <p style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 0.8rem; color: #334155;">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         style="height: 1.25rem; width: 1.25rem; color: #22c55e; flex-shrink: 0;" 
+         fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.356 4.071a1 1 0 01-.272 1.028l-2.457 2.457a11.042 11.042 0 005.516 5.516l2.457-2.457a1 1 0 011.028-.272l4.071 1.356A1 1 0 0121 18.72V22a2 2 0 01-2 2h-1C9.163 24 2 16.837 2 8V7a2 2 0 011-1z" />
     </svg>
-    <a href="tel:+917019079848" class="text-blue-600 hover:underline">
+    <a href="tel:+917019079848" 
+       style="
+         color: #2563eb; 
+         text-decoration: none; 
+         font-weight: 600;
+         transition: color 0.3s ease;
+         cursor: pointer;
+       "
+       onmouseover="this.style.color='#1e40af'; this.style.textDecoration='underline'" 
+       onmouseout="this.style.color='#2563eb'; this.style.textDecoration='none'"
+    >
       +91 7019079848
     </a>
   </p>
   
   <!-- GitHub -->
-  <p class="flex items-center justify-center gap-2 text-gray-700 mb-4">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+  <p style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem; color: #475569; margin-bottom: 1.2rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         style="height: 1.25rem; width: 1.25rem; color: #374151; flex-shrink: 0;" 
+         fill="currentColor" viewBox="0 0 24 24">
       <path d="M12 .297a12 12 0 00-3.797 23.406c.6.112.82-.26.82-.578v-2.03c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.757-1.334-1.757-1.091-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.072 1.835 2.807 1.305 3.492.997.108-.776.42-1.305.764-1.605-2.523-.287-5.174-1.262-5.174-5.627 0-1.244.445-2.262 1.175-3.061-.117-.287-.51-1.444.112-3.012 0 0 .96-.307 3.15 1.168a10.92 10.92 0 015.73 0c2.19-1.475 3.15-1.168 3.15-1.168.622 1.568.229 2.725.112 3.012.73.799 1.175 1.817 1.175 3.061 0 4.375-2.652 5.34-5.184 5.623.432.373.816 1.102.816 2.222v3.293c0 .322.216.694.824.576A12 12 0 0012 .297z"/>
     </svg>
-    <a href="https://github.com/bsubba3002" target="_blank" class="text-blue-600 hover:underline">
+    <a href="https://github.com/bsubba3002" target="_blank" 
+       style="
+         color: #3b82f6; 
+         text-decoration: none; 
+         font-weight: 600;
+         transition: color 0.3s ease;
+         cursor: pointer;
+       "
+       onmouseover="this.style.color='#1e40af'; this.style.textDecoration='underline'" 
+       onmouseout="this.style.color='#3b82f6'; this.style.textDecoration='none'"
+    >
       GitHub Profile
     </a>
   </p>
@@ -149,10 +250,27 @@
   <!-- Resume Button -->
   <a href="https://drive.google.com/file/d/1d7uc1Ymby9OGEnOGhFQV737tNpRncrci/view?usp=sharing" 
      target="_blank" 
-     class="inline-block px-5 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">
+     style="
+       display: inline-block; 
+       padding: 0.6rem 1.6rem; 
+       background: linear-gradient(90deg, #2563eb 0%, #4338ca 100%);
+       color: white; 
+       font-weight: 700; 
+       font-size: 1rem;
+       border-radius: 0.75rem; 
+       box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+       text-decoration: none;
+       user-select: none;
+       transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+       cursor: pointer;
+     "
+     onmouseover="this.style.background='linear-gradient(90deg, #1e40af 0%, #312e81 100%)'; this.style.transform='scale(1.07)'; this.style.boxShadow='0 10px 25px rgba(59, 130, 246, 0.7)';"
+     onmouseout="this.style.background='linear-gradient(90deg, #2563eb 0%, #4338ca 100%)'; this.style.transform='scale(1)'; this.style.boxShadow='0 6px 15px rgba(59, 130, 246, 0.4)';"
+  >
      📄 View Resume
   </a>
 </div>
+
 
     <!-- Professional Summary -->
     <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mt-10 text-left">
@@ -166,8 +284,8 @@
 
 <!-- 🌟 Enhanced Section Buttons -->
 <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-  <!-- Single Button Template -->
-  <a href="education.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-blue-700 hover:to-indigo-700 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
+  <!-- Education -->
+  <a href="education.html" class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-cyan-600 hover:to-blue-600 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.122 6.84L12 20.944l-6.28-3.526a12.083 12.083 0 01.12-6.84L12 14z" />
@@ -175,42 +293,46 @@
     <span class="font-semibold text-lg">Education</span>
   </a>
 
-  <a href="internships.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-blue-700 hover:to-indigo-700 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
+  <!-- Internships -->
+  <a href="internships.html" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-green-600 hover:to-emerald-600 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 2.21-1.79 4-4 4H5a4 4 0 010-8h3c2.21 0 4 1.79 4 4zM19 13h-3a4 4 0 010-8h3a4 4 0 010 8z" />
     </svg>
     <span class="font-semibold text-lg">Internships</span>
   </a>
 
-  <a href="skills.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-blue-700 hover:to-indigo-700 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
+  <!-- Skills -->
+  <a href="skills.html" class="bg-gradient-to-r from-pink-500 to-rose-500 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-pink-600 hover:to-rose-600 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 01-8 0M12 17v.01M4 12h16" />
     </svg>
     <span class="font-semibold text-lg">Skills</span>
   </a>
 
-  <a href="projects.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-blue-700 hover:to-indigo-700 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
+  <!-- Projects -->
+  <a href="projects.html" class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-indigo-600 hover:to-purple-600 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L8.25 21h7.5l-1.5-4M10 9V3h4v6m-4 0H6m12 0h-4" />
     </svg>
     <span class="font-semibold text-lg">Projects</span>
   </a>
 
-  <a href="certifications.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-blue-700 hover:to-indigo-700 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
+  <!-- Certifications -->
+  <a href="certifications.html" class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-yellow-600 hover:to-orange-600 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l-4 4m0 0l4-4m-4 4V4m16 0v16m0 0l-4-4m4 4l-4-4" />
     </svg>
     <span class="font-semibold text-lg">Certifications</span>
   </a>
 
-  <a href="hackathons.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-blue-700 hover:to-indigo-700 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
+  <!-- Hackathons -->
+  <a href="hackathons.html" class="bg-gradient-to-r from-red-500 to-pink-600 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 hover:from-red-600 hover:to-pink-700 transform transition-all duration-300 flex flex-col items-center justify-center text-center space-y-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121a3 3 0 000-4.242M12 20h9M3 20h9m-6-6l6-6M12 4V2m0 2v2" />
     </svg>
     <span class="font-semibold text-lg">Hackathons</span>
   </a>
 </div>
-
 
 
 
