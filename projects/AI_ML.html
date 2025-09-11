@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Projects | Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Smooth Scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- ✅ Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="text-blue-600 font-extrabold text-xl">
+        <a href="index.html">Balasubrahmanya</a>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+          <!-- Hamburger Icon -->
+          <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close Icon -->
+          <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-6 text-blue-600 font-semibold">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="internships.html">Internships</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="hackathons.html">Hackathons</a>
+        <a href="personal.html">Personal</a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 mt-3 pb-4 text-blue-600 font-semibold">
+      <a href="index.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Home</a>
+      <a href="education.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Education</a>
+      <a href="internships.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Internships</a>
+      <a href="skills.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Skills</a>
+      <a href="projects.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Projects</a>
+      <a href="certifications.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Certifications</a>
+      <a href="hackathons.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Hackathons</a>
+      <a href="personal.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Personal</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ✅ JavaScript for Hamburger Toggle -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+</script>
+
+<!-- ✅ MAIN CONTENT -->
+<main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
+
+  <!-- Section Heading -->
+  <h2 class="text-3xl font-bold text-blue-700 mb-6 text-center">Artificial Intelligence / Machine Learning Projects</h2>
+
+  <!-- Navigation Buttons -->
+  <div class="flex flex-col items-center gap-4 mb-10 max-w-xs mx-auto">
+    <a href="#skill_sync" class="bg-blue-100 text-blue-700 font-semibold px-6 py-3 rounded hover:bg-blue-200 transition w-full text-center">SkillSync</a>
+    <a href="#machine_learning" class="bg-indigo-100 text-indigo-700 font-semibold px-6 py-3 rounded hover:bg-indigo-200 transition w-full text-center">Machine Learning Experiments</a>
+    <a href="#nlp" class="bg-rose-100 text-rose-700 font-semibold px-6 py-3 rounded hover:bg-rose-200 transition w-full text-center">NLP Projects</a>
+    <a href="#nativesofttech_internship" class="bg-teal-100 text-teal-700 font-semibold px-6 py-3 rounded hover:bg-teal-200 transition w-full text-center">NativeSoftTech Internship</a>
+    <a href="#interview_analysis" class="bg-pink-100 text-pink-700 font-semibold px-6 py-3 rounded hover:bg-pink-200 transition w-full text-center">Interview Analyzer</a>
+    <a href="#ai_ml_resume_optimizer" class="bg-yellow-100 text-yellow-700 font-semibold px-6 py-3 rounded hover:bg-yellow-200 transition w-full text-center">Resume Optimizer</a>
+  </div>
+
+
+
+
+
+
+  <!-- ✅ Projects Section -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold text-blue-700">Projects</h1>
+      <p class="text-gray-600 mt-2 text-lg">A glimpse into the work I’ve built</p>
+    </header>
+
+    <!-- Project: SkillSync -->
+    <section id="skill_sync" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">
+        🚀 SkillSync – AI-Powered Skill Gap Analyzer
+      </h2>
+
+      <img src="images/skill_sync.jpg" 
+           alt="SkillSync Screenshot" 
+           class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md">
+
+      <p class="text-gray-700 text-lg mb-4">
+        SkillSync is a smart web app that identifies skill gaps by comparing user skills with job descriptions using AI. 
+        It helps learners and professionals find what they’re missing and provides a personalized upskilling roadmap.
+      </p>
+
+      <ul class="list-disc list-inside text-gray-700 text-lg mb-4 space-y-1">
+        <li>✅ Skill-to-job matching with NLP</li>
+        <li>📉 Highlights missing or weak skills</li>
+        <li>📚 Personalized upskilling recommendations</li>
+        <li>🔁 Keeps users aligned with job market trends</li>
+      </ul>
+
+      <p class="text-gray-700 text-lg mb-4">
+        <strong>Tech Stack:</strong> Python, Flask, TensorFlow, Scikit-learn, HTML5, Tailwind CSS
+      </p>
+
+      <div class="bg-gray-100 p-4 rounded-lg mb-4 text-gray-800">
+        <p class="font-semibold mb-2">📊 Sample Output:</p>
+        <p><strong>Matched Skills:</strong> Python, SQL</p>
+        <p><strong>Missing Skills:</strong> TensorFlow, Data Visualization</p>
+        <p><strong>Suggestions:</strong> Learn TensorFlow and tools like Power BI</p>
+      </div>
+    </section>
+    <section id="ai_ml_resume_optimizer" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold text-purple-700 mb-4">🤖 AI/ML Resume Optimizer & Evaluator</h2>
+
+  <p class="text-gray-700 text-lg mb-4">
+    A Flask web app that leverages AI and ML models to analyze, improve, and generate ATS-friendly resumes. Features OCR text extraction, resume-JD similarity scoring, contact info extraction, and DOCX resume generation.
+  </p>
+
+  <p class="text-gray-700 text-lg mb-4">
+    <strong>Tech Used:</strong> Python, Flask, Tesseract OCR, PyMuPDF, Scikit-learn, Google Gemini API, DOCX generation
+  </p>
+
+  <div class="flex flex-col sm:flex-row gap-4 mt-4">
+    <a href="https://github.com/bsubba3002/ai-resume-optimizer" 
+       class="bg-purple-700 text-white px-5 py-2 rounded-lg hover:bg-purple-800 transition text-center" target="_blank" rel="noopener noreferrer">
+       📁 GitHub Repo
+    </a>
+  </div>
+</section>
+
+<section id="interview_analysis" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold text-pink-700 mb-4">🎤 AI-Powered Interview Analysis Web App</h2>
+
+  <p class="text-gray-700 text-lg mb-4">
+    An interactive web application simulating real-time technical interviews using AI and NLP. It generates role-specific questions, records user answers, transcribes speech to text, and evaluates responses with intelligent feedback.
+  </p>
+
+  <p class="text-gray-700 text-lg mb-4">
+    <strong>Key Features:</strong>
+    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+      <li>🧠 AI-generated interview questions using Google Gemini</li>
+      <li>🎙️ Speech-to-text answer capture via Google SpeechRecognition</li>
+      <li>✅ Real-time validation of answers with detailed feedback</li>
+      <li>📊 Tracks user performance and generates Excel reports</li>
+      <li>🗃️ NLP-based filler word detection and fluency scoring</li>
+    </ul>
+  </p>
+
+  <p class="text-gray-700 text-lg mb-4">
+    <strong>Tech Stack:</strong> Python, Flask, Google Gemini API, NLTK, Pandas, Google SpeechRecognition, Excel (xlsx), HTML5
+  </p>
+
+  <div class="flex flex-col sm:flex-row gap-4 mt-4">
+    <a href="https://github.com/bsubba3002/interview-analyzer" 
+       class="bg-pink-700 text-white px-5 py-2 rounded-lg hover:bg-pink-800 transition text-center" target="_blank" rel="noopener noreferrer">
+       📁 GitHub Repo
+    </a>
+  </div>
+</section>
+
+    <!-- Project 6:ML -->
+    <section id="machine_learning" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-indigo-700 mb-4">🧠 Machine Learning Python Notebooks</h2>
+
+      <p class="text-gray-700 text-lg mb-4">
+        A collection of well-documented Jupyter Notebooks covering essential machine learning techniques. Includes end-to-end implementations of real-world ML tasks using Python and scikit-learn.
+      </p>
+
+      <p class="text-gray-700 text-lg mb-4">
+        <strong>Tech Used:</strong> Python, Jupyter, NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 mt-4">
+        <a href="https://github.com/bsubba3002/machine-learning-" 
+           class="bg-indigo-700 text-white px-5 py-2 rounded-lg hover:bg-indigo-800 transition text-center">
+           📁 GitHub Repo
+        </a>
+      </div>
+    </section>
+
+    <!-- Project 2: NLP -->
+    <section id = "nlp" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-rose-700 mb-4">📊 Natural Language Processing – Python Notebooks</h2>
+
+      <!-- Screenshot -->
+      <!--<img src="images/nlp_notebook_screenshot.png" 
+           alt="NLP Notebook Screenshot" 
+           class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md"> -->
+      <!-- Description -->
+      <p class="text-gray-700 text-lg mb-4">
+        A hands-on NLP project built with Jupyter Notebooks, exploring the foundations of Natural Language Processing. Topics range from basic preprocessing to text classification using classic ML models.
+      </p>
+
+      <!-- Tech Stack -->
+      <p class="text-gray-700 text-lg mb-4">
+        <strong>Tech Used:</strong> Python, Jupyter, NLTK, scikit-learn, pandas, Matplotlib
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-4">
+        <a href="https://github.com/bsubba3002/natural_language_processing-" 
+           class="bg-rose-700 text-white px-5 py-2 rounded-lg hover:bg-rose-800 transition text-center">
+           📁 GitHub Repo
+        </a>
+      </div>
+    </section>
+
+    <!-- Project 8: intern -->
+    <section id="nativesofttech_internship" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-teal-700 mb-4">🧑‍💻 NativeSoftTech Internship – Data & ML Projects</h2>
+
+      <!-- Screenshot -->
+       <!--<img src="images/nativesofttech_internship.png" 
+           alt="Internship Project Screenshot" 
+           class="w-full max-w-2xl mx-auto rounded-xl mb-6 shadow-md"> -->
+
+      <!-- Description -->
+      <p class="text-gray-700 text-lg mb-4">
+        A collection of real-world tasks completed during my internship at NativeSoftTech, covering data analysis, visualization, and machine learning experiments. Each notebook demonstrates problem-solving, practical implementation, and clear reporting.
+      </p>
+
+      <!-- Tech Stack -->
+      <p class="text-gray-700 text-lg mb-4">
+        <strong>Tech Used:</strong> Python, Jupyter, pandas, NumPy, scikit-learn, Matplotlib, Seaborn
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-4">
+        <a href="https://github.com/bsubba3002/NativeSoftTech_internship-" 
+           class="bg-teal-700 text-white px-5 py-2 rounded-lg hover:bg-teal-800 transition text-center">
+           📁 GitHub Repo
+        </a>
+      </div>
+    </section>
+
+  <!-- Coming Soon Button Section -->
+  <div class="flex justify-center mt-8">
+    <button
+      disabled
+      class="relative bg-yellow-400 text-yellow-900 font-semibold px-6 py-2 rounded-lg cursor-not-allowed
+             hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300
+             animate-pulse transition-colors duration-500"
+      aria-label="Coming Soon Project"
+      title="Coming Soon"
+    >
+      ⏳ Coming Soon
+    </button>
+  </div>
+
+</main>
+
+<!-- ✅ Footer -->
+<footer class="bg-gray-900 text-white mt-12 py-6">
+  <div class="max-w-7xl mx-auto px-6 text-sm flex flex-col sm:flex-row justify-between items-center">
+    <p>&copy; 2025 Balasubrahmanya. All rights reserved.</p>
+    <div class="space-x-4 mt-2 sm:mt-0">
+      <a href="#" class="hover:underline">LinkedIn</a>
+      <a href="https://github.com/bsubba3002" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+      <a href="#" class="hover:underline">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

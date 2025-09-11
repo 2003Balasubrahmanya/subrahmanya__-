@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Projects | Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Smooth Scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- ✅ Responsive Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="text-blue-600 font-extrabold text-xl">
+        <a href="index.html">Balasubrahmanya</a>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+          <!-- Hamburger Icon -->
+          <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close Icon -->
+          <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex space-x-6 text-blue-600 font-semibold">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="internships.html">Internships</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="hackathons.html">Hackathons</a>
+        <a href="personal.html">Personal</a>
+      </div>
+    </div>
+
+    <!-- ✅ Mobile Links -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 mt-3 pb-4 text-blue-600 font-semibold">
+      <a href="index.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Home</a>
+      <a href="education.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Education</a>
+      <a href="internships.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Internships</a>
+      <a href="skills.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Skills</a>
+      <a href="projects.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Projects</a>
+      <a href="certifications.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Certifications</a>
+      <a href="hackathons.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Hackathons</a>
+      <a href="personal.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Personal</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ✅ JavaScript for Hamburger Toggle -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+</script>
+
+<!-- ✅ MAIN CONTENT -->
+<main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
+
+  <!-- Heading -->
+  <h2 class="text-3xl font-bold text-blue-700 mb-6 text-center">Web Development Projects</h2>
+
+  <!-- ✅ Navigation Buttons (Scroll to Project Sections) -->
+  <div class="flex flex-wrap justify-center gap-3 mb-10">
+    <a href="#malnad" class="bg-blue-100 text-blue-700 font-semibold px-4 py-2 rounded hover:bg-blue-200">Malnad Travels</a>
+    <a href="#omai" class="bg-purple-100 text-purple-700 font-semibold px-4 py-2 rounded hover:bg-purple-200">Om.ai</a>
+    <a href="#medisync" class="bg-emerald-100 text-emerald-700 font-semibold px-4 py-2 rounded hover:bg-emerald-200">Medi_Sync</a>
+    <a href="#bhojanalay" class="bg-red-100 text-red-600 font-semibold px-4 py-2 rounded hover:bg-red-200">Bhojanalay</a>
+    <a href="#nsenterprise" class="bg-blue-100 text-blue-800 font-semibold px-4 py-2 rounded hover:bg-blue-200">NS Enterprises</a>
+  </div>
+
+  <!-- ✅ Project Sections -->
+
+  <!-- Project 1 -->
+  <section id="malnad" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8">
+    <h3 class="text-2xl font-bold text-green-700 mb-4">🌄 Malnad Travels Website</h3>
+    <img src="images/malnad-travels-website.jpg" alt="Malnad Travels Screenshot" class="w-full rounded-xl mb-4 shadow-md">
+    <p class="text-gray-700 mb-3">A static tourism site promoting Karnataka’s Malnad region. Highlights destinations, culture, and packages.</p>
+    <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> HTML5, CSS3, JavaScript, Bootstrap</p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="https://bsubba3002.github.io/malnad-travels-website" target="_blank" class="bg-green-700 text-white px-5 py-2 rounded hover:bg-green-800 text-center">🌐 Live Demo</a>
+      <a href="https://github.com/bsubba3002/malnad-travels-website" target="_blank" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+    </div>
+  </section>
+
+  <!-- Project 2 -->
+  <section id="omai" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8">
+    <h3 class="text-2xl font-bold text-purple-700 mb-4">🌸 Om.ai – AI Guide to Indian Knowledge Systems 🕉️</h3>
+    <img src="images/om-ai.jpg" alt="Om.ai Screenshot" class="w-full rounded-xl mb-4 shadow-md">
+    <p class="text-gray-700 mb-3">AI-powered chatbot answering questions from Indian traditional knowledge systems like Ayurveda, Yoga, and Vedas.</p>
+    <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> HTML, CSS, JS, Python, OpenAI API, Render</p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="https://om-ai.onrender.com" class="bg-purple-700 text-white px-5 py-2 rounded hover:bg-purple-800 text-center">🌐 Live Demo</a>
+      <a href="https://github.com/bsubba3002/om.ai" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+    </div>
+  </section>
+
+  <!-- Project 3 -->
+  <section id="medisync" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8">
+    <h3 class="text-2xl font-bold text-emerald-700 mb-4">💊 Medi_Sync – Smart Healthcare Connect</h3>
+    <img src="images/MEDI-SYNC.jpg" alt="Medi_Sync Screenshot" class="w-full rounded-xl mb-4 shadow-md">
+    <p class="text-gray-700 mb-3">Healthcare platform connecting patients and doctors, booking appointments, and showcasing services.</p>
+    <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+    <a href="https://medi-sync-j3ou.onrender.com/" class="bg-emerald-700 text-white px-5 py-2 rounded hover:bg-emerald-800 text-center">🌐 Live Demo</a>
+  </section>
+
+  <!-- Project 4 -->
+  <section id="bhojanalay" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8">
+    <h3 class="text-2xl font-bold text-red-600 mb-4">🏡 Bhojanalay – Authentic Dining Experience</h3>
+    <img src="images/bjojanalaya.jpg" alt="Bhojanalay Screenshot" class="w-full rounded-xl mb-4 shadow-md">
+    <p class="text-gray-700 mb-3">Restaurant site with menu, table booking, image gallery, and outlet information.</p>
+    <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="#" class="bg-red-600 text-white px-5 py-2 rounded hover:bg-red-700 text-center">🌐 Live Demo</a>
+      <a href="#" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+    </div>
+  </section>
+
+  <!-- Project 5 -->
+  <section id="nsenterprise" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8">
+    <h3 class="text-2xl font-bold text-blue-800 mb-4">🏢 NS-ENTERPRISES – Business Website</h3>
+    <img src="images/NS.jpg" alt="NS-ENTERPRISES Screenshot" class="w-full rounded-xl mb-4 shadow-md">
+    <p class="text-gray-700 mb-3">Business website for showcasing products, services, and contact info for NS Enterprises.</p>
+    <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="https://bsubba3002.github.io/NS-ENTERPRISES/" class="bg-blue-800 text-white px-5 py-2 rounded hover:bg-blue-900 text-center">🌐 Live Demo</a>
+      <a href="https://github.com/bsubba3002/NS-ENTERPRISES" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+    </div>
+  </section>
+</main>
+
+<!-- ✅ Footer -->
+<footer class="bg-gray-900 text-white mt-12 py-6">
+  <div class="max-w-7xl mx-auto px-6 text-sm flex flex-col sm:flex-row justify-between items-center">
+    <p>&copy; 2025 Balasubrahmanya. All rights reserved.</p>
+    <div class="space-x-4 mt-2 sm:mt-0">
+      <a href="#" class="hover:underline">LinkedIn</a>
+      <a href="https://github.com/bsubba3002" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+      <a href="#" class="hover:underline">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
