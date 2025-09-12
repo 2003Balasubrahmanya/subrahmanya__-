@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Projects | Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Smooth Scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- ✅ Responsive Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="text-blue-600 font-extrabold text-xl">
+        <a href="index.html">Balasubrahmanya</a>
+      </div>
+
+      <!-- Hamburger Button (Mobile) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+          <!-- Hamburger Icon -->
+          <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close Icon -->
+          <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex space-x-6 text-blue-600 font-semibold">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="internships.html">Internships</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="hackathons.html">Hackathons</a>
+        <a href="personal.html">Personal</a>
+      </div>
+    </div>
+
+    <!-- ✅ Mobile Links -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 mt-3 pb-4 text-blue-600 font-semibold">
+      <a href="index.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Home</a>
+      <a href="education.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Education</a>
+      <a href="internships.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Internships</a>
+      <a href="skills.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Skills</a>
+      <a href="projects.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Projects</a>
+      <a href="certifications.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Certifications</a>
+      <a href="hackathons.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Hackathons</a>
+      <a href="personal.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Personal</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ✅ JavaScript for Hamburger Toggle -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+</script>
+
+<!-- ✅ MAIN CONTENT -->
+<main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
+
+  <!-- Heading -->
+  <h2 class="text-3xl font-bold text-blue-700 mb-6 text-center">Web Development Projects</h2>
+
+  <!-- ✅ Navigation Buttons (Scroll to Project Sections) -->
+<div class="mb-4">
+  <a href="#pdf-ai-assistant" class="bg-blue-100 text-blue-700 font-semibold px-4 py-2 rounded hover:bg-blue-200">PDF AI Assistant</a>
+</div>
+
+<div class="mb-4">
+  <a href="#polylingo" class="bg-purple-100 text-purple-700 font-semibold px-4 py-2 rounded hover:bg-purple-200">Polylingo</a>
+</div>
+
+<div class="mb-4">
+  <a href="#ai-resume-optimizer" class="bg-emerald-100 text-emerald-700 font-semibold px-4 py-2 rounded hover:bg-emerald-200">AI Resume Optimizer</a>
+</div>
+
+<div class="mb-4">
+  <a href="#smart-code-explainer" class="bg-red-100 text-red-600 font-semibold px-4 py-2 rounded hover:bg-red-200">Smart Code Explainer</a>
+</div>
+
+<div class="mb-4">
+  <a href="#natural-language-to-sql-translator" class="bg-blue-100 text-blue-800 font-semibold px-4 py-2 rounded hover:bg-blue-200">NL to SQL Translator</a>
+</div>
+
+<div class="mb-4">
+  <a href="#ai-agents-for-beginners" class="bg-pink-100 text-pink-700 font-semibold px-4 py-2 rounded hover:bg-pink-200">AI Agents for Beginners</a>
+</div>
+
+
+  <!-- ✅ Project Sections -->
+
+<!-- Project: AI Resume Optimizer -->
+<section id="ai-resume-optimizer" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+  <h3 class="text-2xl font-bold text-green-700 mb-4">📄 AI Resume Optimizer</h3>
+  <!--<img src="images/ai-resume-optimizer.jpg" alt="AI Resume Optimizer Screenshot" class="w-full rounded-xl mb-4 shadow-md">-->
+  <p class="text-gray-700 mb-3">
+    An AI-powered tool to optimize resumes by analyzing job descriptions and suggesting improvements for better ATS compatibility.
+  </p>
+  <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> Python, NLP, Flask, JavaScript, HTML, CSS</p>
+  <div class="flex flex-col sm:flex-row gap-4">
+    <a href="https://github.com/bsubba3002/ai-resume-optimizer" target="_blank" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+  </div>
+</section>
+
+<!-- Project: Polylingo -->
+<section id="polylingo" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+  <h3 class="text-2xl font-bold text-green-700 mb-4">🌐 Polylingo</h3>
+  <!--<img src="images/polylingo.jpg" alt="Polylingo Screenshot" class="w-full rounded-xl mb-4 shadow-md">-->
+  <p class="text-gray-700 mb-3">
+    An interactive language learning tool supporting multiple languages. Built to help users pick up vocabulary and grammar through a gamified experience.
+  </p>
+  <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> Python, Flask, HTML, CSS, JavaScript</p>
+  <div class="flex flex-col sm:flex-row gap-4">
+    <a href="https://github.com/bsubba3002/polylingo" target="_blank" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+  </div>
+</section>
+
+<!-- Project: AI Agents for Beginners -->
+<section id="ai-agents-for-beginners" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+  <h3 class="text-2xl font-bold text-green-700 mb-4">🤖 AI Agents for Beginners</h3>
+  <!--<img src="images/ai-agents-for-beginners.jpg" alt="AI Agents for Beginners Screenshot" class="w-full rounded-xl mb-4 shadow-md">-->
+  <p class="text-gray-700 mb-3">
+    A beginner-friendly guide and set of lessons to build intelligent AI agents using modern AI tools and frameworks.
+  </p>
+  <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> Jupyter Notebook, Python, AI Frameworks</p>
+  <div class="flex flex-col sm:flex-row gap-4">
+    <a href="https://github.com/bsubba3002/ai-agents-for-beginners" target="_blank" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+  </div>
+</section>
+
+<!-- Project: PDF AI Assistant -->
+<section id="pdf-ai-assistant" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+  <h3 class="text-2xl font-bold text-green-700 mb-4">📄 PDF AI Assistant</h3>
+  <!--<img src="images/pdf-ai-assistant.jpg" alt="PDF AI Assistant Screenshot" class="w-full rounded-xl mb-4 shadow-md">-->
+  <p class="text-gray-700 mb-3">
+    An AI assistant designed to read and answer questions based on PDF documents, enhancing document search and comprehension.
+  </p>
+  <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> Python, NLP, AI APIs</p>
+  <div class="flex flex-col sm:flex-row gap-4">
+    <a href="https://github.com/bsubba3002/pdf-ai-assistant" target="_blank" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+  </div>
+</section>
+
+<!-- Project: Smart Code Explainer -->
+<section id="smart-code-explainer" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+  <h3 class="text-2xl font-bold text-green-700 mb-4">💡 Smart Code Explainer</h3>
+  <!--<img src="images/smart-code-explainer.jpg" alt="Smart Code Explainer Screenshot" class="w-full rounded-xl mb-4 shadow-md">-->
+  <p class="text-gray-700 mb-3">
+    A tool to automatically generate explanations for code snippets, helping developers understand unfamiliar code faster.
+  </p>
+  <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> HTML, CSS, JavaScript, AI APIs</p>
+  <div class="flex flex-col sm:flex-row gap-4">
+    <a href="https://github.com/bsubba3002/smart-code-explainer" target="_blank" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+  </div>
+</section>
+
+<!-- Project: Natural Language to SQL Translator -->
+<section id="natural-language-to-sql-translator" class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
+  <h3 class="text-2xl font-bold text-green-700 mb-4">🗄️ Natural Language to SQL Translator</h3>
+  <!--<img src="images/natural-language-to-sql-translator.jpg" alt="Natural Language to SQL Translator Screenshot" class="w-full rounded-xl mb-4 shadow-md">-->
+  <p class="text-gray-700 mb-3">
+    A translator tool that converts natural language queries into SQL statements for easier database interactions.
+  </p>
+  <p class="text-gray-700 mb-4"><strong>Tech Used:</strong> Python, NLP, SQL</p>
+  <div class="flex flex-col sm:flex-row gap-4">
+    <a href="https://github.com/bsubba3002/Natural-Language-to-SQL-Translator-" target="_blank" class="bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-900 text-center">📁 GitHub Repo</a>
+  </div>
+</section>
+
+
+
+
+
+<!-- ✅ Footer -->
+<footer class="bg-gray-900 text-white mt-12 py-6">
+  <div class="max-w-7xl mx-auto px-6 text-sm flex flex-col sm:flex-row justify-between items-center">
+    <p>&copy; 2025 Balasubrahmanya. All rights reserved.</p>
+    <div class="space-x-4 mt-2 sm:mt-0">
+      <a href="#" class="hover:underline">LinkedIn</a>
+      <a href="https://github.com/bsubba3002" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+      <a href="#" class="hover:underline">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
