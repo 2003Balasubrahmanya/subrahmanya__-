@@ -1,0 +1,5 @@
+/* style.css - Main stylesheet for the portfolio */
+body {
+  font-family: 'Inter', sans-serif;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
