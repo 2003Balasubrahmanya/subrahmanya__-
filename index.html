@@ -75,6 +75,22 @@
 <!-- Mobile menu animation script -->
 <script src="assets/main.js"></script>
 
+<!-- Visitor Counter Script (CountAPI) -->
+<div id="visitor-counter" style="text-align:center; margin: 2rem 0; color: #2563eb; font-weight: 600;">
+  Visitors: <span id="visitor-count">...</span>
+</div>
+<script>
+  // CountAPI: Free, no-auth visitor counter
+  fetch('https://api.countapi.xyz/hit/bsubba3002-portfolio/visits')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('visitor-count').textContent = data.value;
+    })
+    .catch(() => {
+      document.getElementById('visitor-count').textContent = 'N/A';
+    });
+</script>
+
   <div class="max-w-4xl mx-auto px-6 py-10 text-center">
     
     <!-- Profile Image -->
