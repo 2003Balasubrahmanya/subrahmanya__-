@@ -80,14 +80,16 @@
   Visitors: <span id="visitor-count">...</span>
 </div>
 <script>
-  // CountAPI: Free, no-auth visitor counter
-  fetch('https://api.countapi.xyz/hit/bsubba3002-portfolio/visits')
+  // Use a unique namespace/key for your site
+  const counterKey = 'subrahmanya-portfolio-2025';
+  fetch(`https://api.countapi.xyz/hit/2003balasubrahmanya/${counterKey}`)
     .then(res => res.json())
     .then(data => {
       document.getElementById('visitor-count').textContent = data.value;
     })
-    .catch(() => {
+    .catch((err) => {
       document.getElementById('visitor-count').textContent = 'N/A';
+      console.error('Visitor counter error:', err);
     });
 </script>
 
