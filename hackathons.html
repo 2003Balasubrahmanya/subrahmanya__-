@@ -7,100 +7,104 @@
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
   <style>
     body {
       font-family: 'Inter', sans-serif;
       background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     }
+
+    /* Animation for fade + slide in from left */
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Class for triggering fade + slide */
+    .fade-slide-in {
+      animation: fadeSlideIn 0.6s ease forwards;
+    }
+
+    /* Initial hidden state for sections */
+    .section-hidden {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    /* Smooth scaling for buttons on hover */
+    .btn-animate {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .btn-animate:hover {
+      transform: scale(1.05);
+      background-color: #2563eb; /* Tailwind blue-600 darkened */
+    }
   </style>
 </head>
 
 <body class="text-gray-800">
 
- <!-- 🌟 Super Cool Glassy Responsive Navbar -->
-<nav class="backdrop-blur-md bg-white/70 shadow-lg sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 sm:px-8">
-    <div class="flex justify-between items-center h-16">
+  <!-- 🌟 Super Cool Glassy Responsive Navbar -->
+  <nav class="backdrop-blur-md bg-white/70 shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex justify-between items-center h-16">
 
-      <!-- Logo -->
-      <div class="text-blue-600 font-extrabold text-2xl tracking-wide hover:scale-110 transition-transform duration-300">
-        <a href="index.html">Balasubrahmanya</a>
+        <!-- Logo -->
+        <div class="text-blue-600 font-extrabold text-2xl tracking-wide hover:scale-110 transition-transform duration-300">
+          <a href="index.html">Balasubrahmanya</a>
+        </div>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-blue-600 focus:outline-none" aria-label="Toggle menu">
+            <!-- Hamburger (☰) -->
+            <svg id="hamburger-icon" class="h-7 w-7 block" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+
+            <!-- Close (✖) -->
+            <svg id="close-icon" class="h-7 w-7 hidden" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex space-x-8 text-blue-600 font-semibold text-lg">
+          <a href="index.html" class="nav-link hover:text-blue-700 transition">Home</a>
+          <a href="education.html" class="nav-link hover:text-blue-700 transition">Education</a>
+          <a href="internships.html" class="nav-link hover:text-blue-700 transition">Internships</a>
+          <a href="skills.html" class="nav-link hover:text-blue-700 transition">Skills</a>
+          <a href="projects.html" class="nav-link hover:text-blue-700 transition">Projects</a>
+          <a href="certifications.html" class="nav-link hover:text-blue-700 transition">Certifications</a>
+          <a href="hackathons.html" class="nav-link hover:text-blue-700 transition">Hackathons</a>
+          <a href="personal.html" class="nav-link hover:text-blue-700 transition">Personal</a>
+        </div>
       </div>
 
-      <!-- Hamburger Icon (Mobile) -->
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-blue-600 focus:outline-none">
-          <!-- Hamburger (☰) -->
-          <svg id="hamburger-icon" class="h-7 w-7 block" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-
-          <!-- Close (✖) -->
-          <svg id="close-icon" class="h-7 w-7 hidden" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Desktop Links -->
-      <div class="hidden md:flex space-x-8 text-blue-600 font-semibold text-lg">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="education.html" class="nav-link">Education</a>
-        <a href="internships.html" class="nav-link">Internships</a>
-        <a href="skills.html" class="nav-link">Skills</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="certifications.html" class="nav-link">Certifications</a>
-        <a href="hackathons.html" class="nav-link">Hackathons</a>
-        <a href="personal.html" class="nav-link">Personal</a>
+      <!-- Mobile Menu (Glassy List Style) -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col mt-3 pb-4 space-y-2 
+                                  backdrop-blur-md bg-white/60 shadow-lg rounded-xl p-3">
+        <a href="index.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Home</a>
+        <a href="education.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Education</a>
+        <a href="internships.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Internships</a>
+        <a href="skills.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Skills</a>
+        <a href="projects.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Projects</a>
+        <a href="certifications.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Certifications</a>
+        <a href="hackathons.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Hackathons</a>
+        <a href="personal.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Personal</a>
       </div>
     </div>
-
-    <!-- Mobile Menu (Glassy List Style) -->
-    <div id="mobile-menu" class="hidden md:hidden flex-col mt-3 pb-4 space-y-2 
-                                backdrop-blur-md bg-white/60 shadow-lg rounded-xl p-3">
-      <a href="index.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Home</a>
-      <a href="education.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Education</a>
-      <a href="internships.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Internships</a>
-      <a href="skills.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Skills</a>
-      <a href="projects.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Projects</a>
-      <a href="certifications.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Certifications</a>
-      <a href="hackathons.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Hackathons</a>
-      <a href="personal.html" class="mobile-link block px-4 py-2 rounded-md text-blue-700 hover:bg-blue-600 hover:text-white transition">Personal</a>
-    </div>
-  </div>
-</nav>
-
-<!-- Animation Script -->
-<script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const hamburgerIcon = document.getElementById("hamburger-icon");
-  const closeIcon = document.getElementById("close-icon");
-
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    hamburgerIcon.classList.toggle("hidden");
-    closeIcon.classList.toggle("hidden");
-
-    // Animate links one by one
-    if (!mobileMenu.classList.contains("hidden")) {
-      const links = document.querySelectorAll(".mobile-link");
-      links.forEach((link, index) => {
-        link.style.opacity = 0;
-        link.style.transform = "translateX(-20px)";
-        setTimeout(() => {
-          link.style.transition = "all 0.4s ease-in-out";
-          link.style.opacity = 1;
-          link.style.transform = "translateX(0)";
-        }, index * 150); // staggered delay
-      });
-    }
-  });
-</script>
+  </nav>
 
   <!-- Main Content -->
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -109,84 +113,129 @@
       <p class="text-gray-600 mt-2 text-lg">Awards and participation in technical events</p>
     </header>
 
-    <!-- WE UNBOUND Hackathon -->
-    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">WE UNBOUND (VCET, Puttur)</h2>
+    <!-- All sections initially hidden, will animate on scroll -->
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">WE UNBOUND – Vivekananda College of Engineering and Technology, Puttur</h2>
       <p class="text-gray-700 text-lg mb-4">
-        1st Place for a presentation on "AI versus Humans". The event focused on the impact of AI on human work processes, and the presentation highlighted the balance and future of AI in everyday tasks.
+        1st Place in the event "V vs AI" conducted by the Core Club. The presentation focused on "AI versus Humans", emphasizing the evolving relationship between artificial intelligence and human decision-making.
       </p>
-      <a href="https://drive.google.com/your-certificate-link" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center hover:bg-blue-700">Certificate</a>
+      <a href="https://drive.google.com/file/d/16KuvXBEk8gq-YA2sGCJ4FUKFltyidZwF/view?usp=sharing" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
     </section>
 
-    <!-- INNOVATION Hackathon -->
-    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">INNOVATION Hackathon (IEEE-DSATM)</h2>
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">Ramotsava 2K24 – CodeBuzz (IEEE Event)</h2>
       <p class="text-gray-700 text-lg mb-4">
-        2nd Place for the development of an interactive VR Game and an AR Book. The game integrated virtual reality for a dynamic user experience, while the AR book provided an innovative way to explore augmented reality in education.
+        Won 1st Place in the CodeBuzz competition during Ramotsava 2K24 organized by IEEE.
       </p>
-      <a href="https://drive.google.com/your-certificate-link" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center hover:bg-blue-700">Certificate</a>
+      <a href="https://drive.google.com/file/d/1AiqY-tJztsIjnlPM2p9PMA2-Vex023R7/view?usp=drive_link" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
     </section>
 
-    <!-- Aetherion Hackathon -->
-    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">Aetherion Hackathon (Canara College, Mangalore)</h2>
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">INNOVATHON – Dayananda Sagar Academy of Technology and Management, Bengaluru</h2>
       <p class="text-gray-700 text-lg mb-4">
-        2nd Place for an innovative solution that focused on solving community issues using technology. The solution aimed at improving public services with a tech-driven approach, making processes more efficient and accessible.
+        2nd Place for creating an interactive VR Game and an AR Book. Conducted on 4th and 5th July 2024, the project merged immersive VR experiences with augmented educational tools.
       </p>
-      <a href="https://drive.google.com/your-certificate-link" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center hover:bg-blue-700">Certificate</a>
+      <a href="https://drive.google.com/file/d/1l6jZHX2Ldf21wxWDx66kjyanAH7wJOqv/view?usp=drive_link" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
     </section>
 
-    <!-- SRISHTI 2024 Hackathon -->
-    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">SRISHTI 2024 Hackathon</h2>
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">SmartIndia Hackathon 2024</h2>
       <p class="text-gray-700 text-lg mb-4">
-        Developed a Traditional Food Recommendation Website. This website helps users discover local cuisines and traditional dishes from different regions based on their preferences and dietary needs.
+        Participated in SmartIndia Hackathon 2024, a national level event aimed at providing innovative solutions to real‑world problems. Collaborated on a project to design a scalable solution/tool to address one of the government’s problem statements, fostering teamwork, rapid prototyping, and technology integration.
       </p>
-      <a href="https://drive.google.com/your-certificate-link" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center hover:bg-blue-700">Certificate</a>
+      <a href="https://drive.google.com/your-certificate-link" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
     </section>
 
-    <!-- SANKALP Hackathon -->
-    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">SANKALP Hackathon</h2>
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">IEEE – Sustainable Solutions for Humanity (Bengaluru)</h2>
       <p class="text-gray-700 text-lg mb-4">
-        Developed a VR Game with regional language support. The game allowed users to interact in their native language, providing a unique immersive experience while supporting localization and diversity in gaming.
+        Participated in the event on 28th and 29th September 2024, focusing on innovative, sustainable tech-driven solutions addressing global and societal challenges.
       </p>
-      <a href="https://drive.google.com/your-certificate-link" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center hover:bg-blue-700">Certificate</a>
+      <a href="https://drive.google.com/file/d/14-YN18dGiVNvMUBaS7IM1DhGRVaxFrNU/view?usp=drive_link" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
     </section>
 
-    <!-- IEEE R10 Hackathon -->
-    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">IEEE R10 Hackathon</h2>
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">IEEE R10 Hackathon – Samnvay</h2>
       <p class="text-gray-700 text-lg mb-4">
-        Designed a prototype medical device focused on accessibility. This project aimed at creating solutions that enhance the quality of life for differently-abled individuals, specifically targeting assistive technologies.
+        Finalist at the IEEE R10 Hackathon "Samnvay" held at Dayananda Sagar College, Bengaluru. Themed around affordable medical device deployment, the project aimed at enhancing accessibility in healthcare.
       </p>
-      <a href="https://drive.google.com/your-certificate-link" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center hover:bg-blue-700">Certificate</a>
+      <a href="https://drive.google.com/file/d/1ezxLlT6rjgtx1HksApx0bDideSEhCLLi/view?usp=drive_link" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
     </section>
 
-    <!-- HAKOTSAVA Hackathon -->
-    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">HAKOTSAVA Hackathon</h2>
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">HAKOTSAVA 2K24 – National Hackathon</h2>
       <p class="text-gray-700 text-lg mb-4">
-        Developed KalaChakra: an AI-powered job recommendation system that analyzes user skills to suggest career paths. This project leverages machine learning algorithms to provide personalized job role recommendations.
+        Participated in the national-level hackathon organized by Code Troopers Club and the Department of Computer Science, SMVITM, Udupi (11–13 Sept 2024). Won 1st Place in the "CodeBuzz" competition held under Ramotsava 2K24, organized by IEEE on Jan 19th, 2024.
       </p>
-      <a href="https://drive.google.com/your-certificate-link" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center hover:bg-blue-700">Certificate</a>
+      <a href="https://drive.google.com/file/d/1ekC5jJh2YkmtshVKcrzX-GafXmuj2tSH/view?usp=drive_link" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
     </section>
 
-    <!-- INDCON 25 -->
-    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">INDCON 25 – National Techno-Management Symposium</h2>
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">EVOLVE 2023 – VCET, Puttur</h2>
       <p class="text-gray-700 text-lg mb-4">
-        Participated in the INDCON 25 National Techno-Management Symposium at Anna University, showcasing innovations in technology and management. The symposium brought together bright minds to discuss the future of tech and its intersection with business.
+        Participated in EVOLVE 2023, organized by Vivekananda College of Engineering and Technology in coordination with the IEEE VCET Student Branch.
       </p>
-      <a href="https://drive.google.com/your-certificate-link" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center hover:bg-blue-700">Certificate</a>
+      <a href="https://drive.google.com/your-certificate-link" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
+    </section>
+
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">SRISHTI 2024 – Atriya College of Engineering & Technology, Bengaluru</h2>
+      <p class="text-gray-700 text-lg mb-4">
+        Finalist at SRISHTI 2024 held from May 24 to 26, 2024. Presented a traditional food recommendation website to promote regional cuisines based on dietary preferences.
+      </p>
+      <a href="https://drive.google.com/file/d/1cqx-SE6y6Ewh7tpZ3wgGbqeL-I2dOKwd/view?usp=drive_link" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
+    </section>
+
+    <section class="bg-white rounded-3xl shadow-xl p-6 sm:p-8 mb-8 section-hidden">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">Girl Geek Hack 2023 – NITK Surathkal</h2>
+      <p class="text-gray-700 text-lg mb-4">
+        Participated in the Girl Geek Hackathon organized by NITK Surathkal, held from November 29 to December 1, 2023. Focused on promoting women in tech and developing inclusive solutions.
+      </p>
+      <a href="https://drive.google.com/your-certificate-link" target="_blank" rel="noopener" class="bg-blue-600 text-white px-4 py-2 rounded-full inline-block text-center btn-animate">View Certificate</a>
     </section>
 
   </div>
 
-  <!-- Footer -->
-  <footer class="text-center mt-12 text-sm text-gray-500">
-    <p>Designed with ❤️ by Balasubrahmanya</p>
-  </footer>
+  <script>
+    // Navbar toggle logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      // If menu is open, show close icon; else hamburger icon
+      if (!isOpen) {
+        hamburgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+
+    // Scroll reveal fade + slide in for hackathon sections
+    const sections = document.querySelectorAll('.section-hidden');
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < triggerBottom) {
+          section.classList.add('fade-slide-in');
+          section.classList.remove('section-hidden');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 
 </body>
 </html>
