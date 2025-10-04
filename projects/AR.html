@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AR / VR Projects | Portfolio</title>
+  <title>Web Projects | Portfolio</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -12,12 +13,50 @@
     html {
       scroll-behavior: smooth;
     }
-    /* Fade-in animation */
-    .fade-in {
+
+    .category-btn {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      font-size: 1.25rem;
+      /* text-xl */
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.8s ease forwards;
+      text-align: center;
+      display: block;
     }
+
+    .category-btn:hover {
+      transform: scale(1.05) translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .category-btn:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .category-btn:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .category-btn:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .category-btn:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    .category-btn:nth-child(5) {
+      animation-delay: 1s;
+    }
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -25,27 +64,31 @@
       }
     }
 
-    /* Button subtle scale and shadow on hover */
-    .btn-animated {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .btn-animated:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.5);
+    @keyframes rotateCube {
+      from {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
 
-  <!-- Navbar (unchanged) -->
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
   <nav class="bg-white shadow-md sticky top-0 z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="text-blue-600 font-extrabold text-xl">
           <a href="index.html">Balasubrahmanya</a>
         </div>
+
+        <!-- Mobile Menu Toggle -->
         <div class="md:hidden">
-          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+          <button id="menu-toggle" class="text-blue-600 focus:outline-none" aria-label="Toggle menu">
             <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" stroke="currentColor" stroke-width="2"
               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 6h16M4 12h16M4 18h16" />
@@ -56,7 +99,13 @@
             </svg>
           </button>
         </div>
-        <div class="hidden md:flex space-x-6 text-blue-600 font-semibold">
+
+        <!-- Desktop Nav -->
+        <div
+          class="hidden md:flex space-x-6 text-blue-600 font-semibold"
+          role="navigation"
+          aria-label="Primary Navigation"
+        >
           <a href="index.html">Home</a>
           <a href="education.html">Education</a>
           <a href="internships.html">Internships</a>
@@ -67,7 +116,14 @@
           <a href="personal.html">Personal</a>
         </div>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden flex-col space-y-2 mt-3 pb-4 text-blue-600 font-semibold">
+
+      <!-- Mobile Links -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden flex-col space-y-2 mt-3 pb-4 text-blue-600 font-semibold"
+        role="navigation"
+        aria-label="Mobile Navigation"
+      >
         <a href="index.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Home</a>
         <a href="education.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Education</a>
         <a href="internships.html" class="block px-4 py-2 hover:bg-blue-100 rounded">Internships</a>
@@ -80,23 +136,34 @@
     </div>
   </nav>
 
-  <!-- Main content with short, animated message -->
-  <main class="max-w-xl mx-auto px-6 py-32 text-center fade-in">
-    <h1 class="text-4xl font-bold text-blue-700 mb-6">AR / VR Projects</h1>
-    <p class="text-lg text-gray-700 mb-8">
-      Due to technical issues, the projects are currently unavailable.
-      <br />
-      am working on it and will update soon.
-    </p>
-    <a href="projects.html"
-       class="btn-animated inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700">
-      Coming Soon
-    </a>
+  <!-- Main Section -->
+  <main class="max-w-4xl mx-auto px-4 py-20 text-center">
+
+    <h2 class="text-4xl font-extrabold text-blue-700 mb-12">Explore My Work</h2>
+
+    
+<!-- Snapchat Lens Buttons -->
+<div class="flex flex-col items-center space-y-6">
+  <a href="https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=9afbef64f8bc41bf9e7d64f2681685d5&metadata=01" target="_blank" class="bg-gradient-to-r from-pink-500 to-red-500 text-white px-6 py-3 rounded shadow-md hover:opacity-90 transition">
+    🎉 Birthday Wishes Lens
+  </a>
+  
+  <a href="https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=45fa97d2b4e445059f415fc597bec0b2&metadata=01" target="_blank" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded shadow-md hover:opacity-90 transition">
+    🎓 VCET Lens
+  </a>
+  
+  <a href="https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=ba2a1d2477494bcca944c4f729e663df&metadata=01" target="_blank" class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-3 rounded shadow-md hover:opacity-90 transition">
+    🪔 Ganesh Chaturthi Lens
+  </a>
+</div>
+
   </main>
 
-  <!-- Footer (unchanged) -->
+  <!-- Footer -->
   <footer class="bg-gray-900 text-white mt-12 py-6">
-    <div class="max-w-7xl mx-auto px-6 text-sm flex flex-col sm:flex-row justify-between items-center">
+    <div
+      class="max-w-7xl mx-auto px-6 text-sm flex flex-col sm:flex-row justify-between items-center"
+    >
       <p>&copy; 2025 Balasubrahmanya. All rights reserved.</p>
       <div class="space-x-4 mt-2 sm:mt-0">
         <a href="#" class="hover:underline">LinkedIn</a>
@@ -106,18 +173,20 @@
     </div>
   </footer>
 
-  <!-- Mobile menu toggle script -->
+  <!-- Mobile Menu Toggle Script -->
   <script>
-    const toggleBtn = document.getElementById('menu-toggle');
+    const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const hamburgerIcon = document.getElementById('hamburger-icon');
     const closeIcon = document.getElementById('close-icon');
 
-    toggleBtn.addEventListener('click', () => {
+    menuToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
       hamburgerIcon.classList.toggle('hidden');
       closeIcon.classList.toggle('hidden');
     });
   </script>
+
 </body>
+
 </html>
