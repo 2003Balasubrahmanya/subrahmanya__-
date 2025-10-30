@@ -461,6 +461,53 @@
     window.open('chatbot.html', 'ChatbotWindow', 'width=400,height=600');
   }
 </script>
+<section id="stats" style="text-align:center; padding:50px; background:#f7f7f7; font-family:Arial, sans-serif;">
+  <h2 style="margin-bottom:20px; font-size:2em; color:#333;">My Achievements</h2>
+  
+  <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap;">
+    <div>
+      <h3 id="clients" style="font-size:2em; color:#ff6600;">0</h3>
+      <p style="font-weight:bold; color:#555;">Clients</p>
+    </div>
+    <div>
+      <h3 id="projects" style="font-size:2em; color:#0099ff;">0</h3>
+      <p style="font-weight:bold; color:#555;">Projects</p>
+    </div>
+    <div>
+      <h3 id="awards" style="font-size:2em; color:#33cc33;">0</h3>
+      <p style="font-weight:bold; color:#555;">Awards</p>
+    </div>
+    <div>
+      <h3 id="hackathons" style="font-size:2em; color:#ff33aa;">0</h3>
+      <p style="font-weight:bold; color:#555;">Hackathons</p>
+    </div>
+  </div>
+
+  <script>
+    // Smooth slow count animation
+    function animateCount(id, target, duration) {
+      let start = 0;
+      const element = document.getElementById(id);
+      const stepTime = 30; // milliseconds between updates
+      const increment = target / (duration / stepTime);
+      
+      const counter = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          start = target;
+          clearInterval(counter);
+        }
+        element.textContent = Math.floor(start) + "+";
+      }, stepTime);
+    }
+
+    // Start the animations
+    animateCount("clients", 3, 2500);      // 3+ Clients
+    animateCount("projects", 25, 3000);    // 25+ Projects
+    animateCount("awards", 5, 2700);       // 5+ Awards
+    animateCount("hackathons", 15, 3200);  // 15+ Hackathons
+  </script>
+</section>
 
   <!-- Footer -->
   <footer class="text-center mt-12 text-sm text-gray-500">
