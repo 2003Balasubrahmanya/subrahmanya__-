@@ -76,22 +76,7 @@
 <script src="assets/main.js"></script>
 
 <!-- Visitor Counter Script (CountAPI) -->
-<div id="visitor-counter" style="text-align:center; margin: 2rem 0; color: #2563eb; font-weight: 600;">
-  Visitors: <span id="visitor-count">...</span>
-</div>
-<script>
-  // Use a unique namespace/key for your site
-  const counterKey = 'subrahmanya-portfolio-2025';
-  fetch(`https://api.countapi.xyz/hit/2003balasubrahmanya/${counterKey}`)
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('visitor-count').textContent = data.value;
-    })
-    .catch((err) => {
-      document.getElementById('visitor-count').textContent = 'N/A';
-      console.error('Visitor counter error:', err);
-    });
-</script>
+
 
   <div class="max-w-4xl mx-auto px-6 py-10 text-center">
     
